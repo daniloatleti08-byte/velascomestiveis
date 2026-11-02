@@ -5,6 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guia Prático de Velas Comestíveis Gourmet – Aprenda & Lucre neste Natal</title>
   <meta name="description" content="Aprenda a fazer velas comestíveis gourmet e transforme sua ceia de Natal ou crie um negócio lucrativo. Guia completo por apenas R$37.">
+
+  <!-- =========================================================
+       META PIXEL CODE (Facebook Ads)
+       INSTRUÇÃO: Substitua 'SEU_PIXEL_ID_AQUI' pelo ID numérico do seu Pixel da Meta
+       Exemplo: const META_PIXEL_ID = '123456789012345';
+       ========================================================= -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    // CONFIGURE SEU PIXEL ID AQUI:
+    const META_PIXEL_ID = 'SEU_PIXEL_ID_AQUI';
+
+    if (META_PIXEL_ID && META_PIXEL_ID !== 'SEU_PIXEL_ID_AQUI') {
+      fbq('init', META_PIXEL_ID);
+      fbq('track', 'PageView');
+    }
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -116,35 +146,58 @@
       margin: 0 auto 36px;
     }
 
-    /* ===== VIDEO ===== */
+    /* ===== VIDEO (vertical 9:16 – YouTube) ===== */
     .vsl-wrapper {
       position: relative;
-      width: 100%; max-width: 680px;
+      width: 100%; max-width: 380px;
       margin: 0 auto 36px;
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 12px 48px rgba(90,20,20,.12);
-      border: 2px solid rgba(201,168,76,.25);
+      box-shadow: 0 12px 48px rgba(90,20,20,.15);
+      border: 2px solid rgba(201,168,76,.30);
     }
-    .vsl-wrapper::after {
-      content: '▶  Assista ao vídeo';
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 600; font-size: 1rem; color: var(--branco);
-      background: rgba(0,0,0,.35);
-      pointer-events: none;
-      transition: opacity .3s;
-    }
-    .vsl-wrapper:hover::after { opacity: 0; }
     .vsl-ratio {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 177.78%; /* 9:16 vertical */
       background: #1a0a0a;
     }
-    .vsl-ratio video, .vsl-ratio iframe {
+    .vsl-ratio iframe {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
-      object-fit: cover;
+      border: 0;
+    }
+    .vsl-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: radial-gradient(circle at 50% 35%, rgba(122,27,27,.88) 0%, rgba(20,5,5,.96) 100%);
+      color: var(--branco);
+      text-align: center;
+      padding: 30px 24px;
+      z-index: 2;
+    }
+    .vsl-play-btn {
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-dark) 100%);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 0 32px rgba(201,168,76,.6);
+      animation: pulse-glow 2s infinite;
+      transition: transform .2s ease;
+    }
+    .vsl-play-btn svg { margin-left: 4px; }
+    .vsl-placeholder:hover .vsl-play-btn { transform: scale(1.08); }
+    .vsl-placeholder-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--dourado-light);
+      margin-bottom: 8px;
+    }
+    .vsl-placeholder-sub {
+      font-size: .82rem;
+      color: rgba(255,255,255,.75);
+      max-width: 280px;
+      line-height: 1.5;
     }
 
     /* ===== CTA BUTTON ===== */
@@ -173,9 +226,36 @@
     }
     .btn-cta-secondary:hover { box-shadow: 0 8px 36px rgba(122,27,27,.3); }
 
-    /* delay – hidden initially */
-    .cta-delayed { opacity: 0; pointer-events: none; transition: opacity .6s ease; }
-    .cta-delayed.visible { opacity: 1; pointer-events: auto; }
+    /* Botão específico abaixo do preço */
+    .btn-cta-price {
+      display: inline-block;
+      width: 100%;
+      max-width: 440px;
+      margin: 16px auto 0;
+      padding: 18px 28px;
+      font-size: clamp(1rem, 2.5vw, 1.12rem);
+      background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-dark) 100%);
+      box-shadow: 0 6px 28px rgba(201,168,76,.35);
+      border-radius: 100px;
+    }
+    .btn-cta-price:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 36px rgba(201,168,76,.55);
+    }
+
+    /* Delay de 4 minutos no botão abaixo do vídeo (hero) */
+    .cta-delayed {
+      display: none;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .cta-delayed.visible {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      animation: fade-up .7s ease-out forwards;
+    }
 
     .cta-note {
       display: block;
@@ -521,18 +601,49 @@
       Descubra o método simples para criar velas de manteiga de ervas e chocolate usando formas caseiras. O segredo mais bem guardado dos jantares de luxo, agora na sua cozinha.
     </p>
 
-    <!-- VSL – Smart Autoplay (muted) -->
+    <!-- VSL – YouTube Vertical (9:16) – Smart Autoplay mudo
+         INSTRUÇÕES:
+         1. Substitua SEU_VIDEO_ID abaixo pelo ID do seu vídeo do YouTube.
+            Ex.: se a URL é https://youtu.be/abc123xyz, o ID é abc123xyz
+         2. Parâmetros já configurados:
+            autoplay=1  → inicia automaticamente
+            mute=1      → começa mudo (obrigatório para autoplay)
+            loop=1      → repete o vídeo
+            rel=0        → não exibe vídeos relacionados ao final
+            modestbranding=1 → minimiza logo do YouTube
+            playsinline=1    → reproduz inline no celular (não abre fullscreen)
+            controls=1       → mostra controles para o usuário poder desmutar
+            iv_load_policy=3 → desativa anotações
+            playlist=SEU_VIDEO_ID → necessário para loop funcionar
+    -->
     <div class="vsl-wrapper">
       <div class="vsl-ratio">
-        <video src="placeholder-video.mp4" muted autoplay playsinline preload="metadata"></video>
+        <!-- Placeholder temático de apresentação (ativo enquanto o ID do YouTube não for configurado) -->
+        <div class="vsl-placeholder" id="vsl-placeholder">
+          <div class="vsl-play-btn">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p class="vsl-placeholder-title">Vídeo Oficial de Apresentação</p>
+          <p class="vsl-placeholder-sub">Cole o link do seu vídeo do YouTube no script no final da página</p>
+        </div>
+        <iframe
+          id="vsl-iframe"
+          style="display: none;"
+          src=""
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          title="Velas Comestíveis Gourmet – Apresentação"
+        ></iframe>
       </div>
     </div>
 
-    <!-- CTA – aparece após delay (ajuste o tempo no script no final da página) -->
-    <a href="https://pay.cakto.com.br/DASzMjB" target="_blank" class="btn-cta cta-delayed" id="cta-hero">
-      QUERO ACESSAR O GUIA AGORA POR APENAS R$&nbsp;37
-    </a>
-    <small class="cta-note">🔒 Pagamento seguro · Acesso imediato</small>
+    <!-- CTA ABAIXO DO VÍDEO – Aparece com delay de 4 minutos (240s) -->
+    <div class="cta-delayed" id="cta-hero-wrapper">
+      <a href="https://pay.cakto.com.br/DASzMjB" target="_blank" class="btn-cta" id="cta-hero">
+        QUERO ACESSAR O GUIA AGORA POR APENAS R$&nbsp;37
+      </a>
+      <small class="cta-note">🔒 Pagamento seguro · Acesso imediato</small>
+    </div>
   </div>
 </section>
 
@@ -706,11 +817,13 @@
       <p class="price-new">R$ 37<small style="font-size:.45em; vertical-align:super;">,00</small></p>
       <span class="price-tag">Pagamento Único · Acesso Vitalício</span>
 
-      <br>
-      <a href="https://pay.cakto.com.br/DASzMjB" target="_blank" class="btn-cta btn-cta-secondary cta-delayed" id="cta-price">
-        SIM! QUERO APRENDER A FAZER VELAS COMESTÍVEIS
-      </a>
-      <small class="cta-note" style="color:var(--texto-light);">🔒 Ambiente seguro · Aprovação instantânea · Acesso imediato</small>
+      <!-- BOTÃO DIRETO ABAIXO DO PREÇO (SEMPRE VISÍVEL) -->
+      <div class="price-cta-container">
+        <a href="https://pay.cakto.com.br/DASzMjB" target="_blank" class="btn-cta btn-cta-price" id="cta-price">
+          SIM! QUERO APRENDER A FAZER VELAS COMESTÍVEIS
+        </a>
+        <small class="cta-note" style="color:var(--texto-light); margin-top: 14px;">🔒 Ambiente 100% seguro · Aprovação instantânea · Acesso imediato</small>
+      </div>
     </div>
   </div>
 </section>
@@ -787,29 +900,105 @@
      SCRIPTS
      ========================================================= -->
 <script>
-  // === CTA Delay ===
-  // Ajuste o valor em milissegundos: 60000 = 1 min, 120000 = 2 min, etc.
-  const CTA_DELAY_MS = 60000;
-  setTimeout(() => {
-    document.querySelectorAll('.cta-delayed').forEach(el => el.classList.add('visible'));
-  }, CTA_DELAY_MS);
+  // ==============================================================
+  // 1. CONFIGURAÇÃO DO VÍDEO DO YOUTUBE
+  // ==============================================================
+  // Cole abaixo a URL ou ID do seu vídeo do YouTube:
+  // Exemplos suportados:
+  // - ID: 'SEU_VIDEO_ID' (ou ex: 'dQw4w9WgXcQ')
+  // - Link: 'https://www.youtube.com/watch?v=...'
+  // - Shorts: 'https://www.youtube.com/shorts/...'
+  // - Link curto: 'https://youtu.be/...'
+  const YOUTUBE_VIDEO_URL_OU_ID = 'SEU_VIDEO_ID';
 
-  // === FAQ Accordion ===
+  function aplicarVideoYouTube(input) {
+    const placeholder = document.getElementById('vsl-placeholder');
+    const iframe = document.getElementById('vsl-iframe');
+    if (!input || input === 'SEU_VIDEO_ID') {
+      if (placeholder) placeholder.style.display = 'flex';
+      if (iframe) iframe.style.display = 'none';
+      return;
+    }
+    const match = input.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))([\w-]{11})/);
+    const videoId = match ? match[1] : input.trim();
+    if (iframe && videoId && videoId.length === 11) {
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&playlist=${videoId}`;
+      iframe.style.display = 'block';
+      if (placeholder) placeholder.style.display = 'none';
+    }
+  }
+  aplicarVideoYouTube(YOUTUBE_VIDEO_URL_OU_ID);
+
+  // ==============================================================
+  // 2. DELAY DE 4 MINUTOS NO BOTÃO ABAIXO DO VÍDEO (HERO)
+  // ==============================================================
+  // 4 minutos = 4 * 60 * 1000 = 240.000 milissegundos
+  const CTA_DELAY_MS = 4 * 60 * 1000;
+
+  // DICA DE TESTE: Para testar a página sem esperar 4 minutos,
+  // basta adicionar ?teste ou ?preview na URL (ex: index.html?teste)
+  const urlParams = new URLSearchParams(window.location.search);
+  const skipDelay = urlParams.has('teste') || urlParams.has('preview') || urlParams.has('semdelay');
+
+  // Lembra na mesma sessão (evita que o usuário perca o botão ao dar F5 após os 4 minutos)
+  const jaAssistiu = sessionStorage.getItem('vsl_cta_liberado') === 'true';
+
+  function liberarBotaoAbaixoDoVideo() {
+    const ctaHero = document.getElementById('cta-hero-wrapper');
+    if (ctaHero) {
+      ctaHero.classList.add('visible');
+      if (!skipDelay) {
+        try { sessionStorage.setItem('vsl_cta_liberado', 'true'); } catch(e){}
+      }
+    }
+  }
+
+  if (skipDelay || jaAssistiu) {
+    liberarBotaoAbaixoDoVideo();
+  } else {
+    setTimeout(liberarBotaoAbaixoDoVideo, CTA_DELAY_MS);
+  }
+
+  // ==============================================================
+  // 3. TRACKING NO PIXEL DA META (INITIATE CHECKOUT)
+  // ==============================================================
+  document.querySelectorAll('a[href*="cakto.com.br"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof fbq === 'function' && typeof META_PIXEL_ID !== 'undefined' && META_PIXEL_ID !== 'SEU_PIXEL_ID_AQUI') {
+        fbq('track', 'InitiateCheckout', {
+          content_name: 'Guia Prático de Velas Comestíveis Gourmet',
+          value: 37.00,
+          currency: 'BRL'
+        });
+      }
+    });
+  });
+
+  // ==============================================================
+  // 4. FAQ ACCORDION
+  // ==============================================================
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
       const isOpen = item.classList.contains('open');
-      // close all
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
       btn.setAttribute('aria-expanded', !isOpen);
     });
   });
 
-  // === Scroll Reveal (lightweight) ===
+  // ==============================================================
+  // 5. SCROLL REVEAL (LEVE & SUAVE)
+  // ==============================================================
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('fade-up'); observer.unobserve(e.target); }});
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('fade-up');
+        observer.unobserve(e.target);
+      }
+    });
   }, { threshold: 0.15 });
+
   document.querySelectorAll('.card, .pillar, .benefit-item, .price-card, .guarantee').forEach(el => {
     el.style.opacity = '0';
     observer.observe(el);
