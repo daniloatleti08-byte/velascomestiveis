@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Prático de Velas Comestíveis Gourmet – Aprenda & Lucre neste Natal</title>
+  <meta name="description" content="Aprenda a fazer velas comestíveis gourmet e transforme sua ceia de Natal ou crie um negócio lucrativo. Guia completo por apenas R$37.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #3a1a1a;
+      background: #FBF6ED;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ===== PALETTE TOKENS ===== */
+    :root {
+      --creme:       #FBF6ED;
+      --creme-light: #FFF9F0;
+      --dourado:     #C9A84C;
+      --dourado-light: #E8D48B;
+      --dourado-dark: #A88832;
+      --vermelho:    #7A1B1B;
+      --vermelho-deep: #5C0E0E;
+      --verde:       #1B6B3A;
+      --verde-light: #2D9F56;
+      --texto:       #3a1a1a;
+      --texto-light: #6b5050;
+      --branco:      #FFFFFF;
+      --sombra:      0 4px 24px rgba(90, 20, 20, .08);
+      --sombra-hover:0 8px 40px rgba(90, 20, 20, .14);
+      --radius:      16px;
+      --radius-sm:   10px;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--vermelho); }
+    h1 { font-weight: 800; }
+    h2 { font-weight: 700; }
+    h3 { font-weight: 600; }
+
+    /* ===== UTILITY ===== */
+    .container { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    .section   { padding: 72px 0; }
+    .text-center { text-align: center; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,.55); }
+      50%      { box-shadow: 0 0 0 14px rgba(201,168,76,0); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      animation: fade-up .7s ease-out both;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px 48px;
+      background:
+        radial-gradient(ellipse at 30% 0%, rgba(201,168,76,.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 100%, rgba(122,27,27,.10) 0%, transparent 55%),
+        linear-gradient(175deg, #FFF9F0 0%, #FBF6ED 50%, #F5ECD8 100%);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5l5 10h11l-9 7 4 11-11-7-11 7 4-11-9-7h11z' fill='%23C9A84C' opacity='.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 780px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(201,168,76,.15);
+      border: 1px solid rgba(201,168,76,.35);
+      color: var(--dourado-dark);
+      font-size: .78rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(1.65rem, 5vw, 2.8rem);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--dourado); }
+    .hero-sub {
+      font-size: clamp(.95rem, 2.5vw, 1.15rem);
+      color: var(--texto-light);
+      max-width: 640px;
+      margin: 0 auto 36px;
+    }
+
+    /* ===== VIDEO ===== */
+    .vsl-wrapper {
+      position: relative;
+      width: 100%; max-width: 680px;
+      margin: 0 auto 36px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(90,20,20,.12);
+      border: 2px solid rgba(201,168,76,.25);
+    }
+    .vsl-wrapper::after {
+      content: '▶  Assista ao vídeo';
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 600; font-size: 1rem; color: var(--branco);
+      background: rgba(0,0,0,.35);
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    .vsl-wrapper:hover::after { opacity: 0; }
+    .vsl-ratio {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: #1a0a0a;
+    }
+    .vsl-ratio video, .vsl-ratio iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* ===== CTA BUTTON ===== */
+    .btn-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-dark) 100%);
+      color: var(--branco);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: clamp(.9rem, 2.5vw, 1.05rem);
+      padding: 16px 36px;
+      border: none; border-radius: 100px;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: transform .2s, box-shadow .3s;
+      animation: pulse-glow 2s infinite;
+    }
+    .btn-cta:hover {
+      transform: scale(1.04);
+      box-shadow: var(--sombra-hover);
+    }
+    .btn-cta-secondary {
+      background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-deep) 100%);
+      animation: pulse-glow 2.5s infinite;
+    }
+    .btn-cta-secondary:hover { box-shadow: 0 8px 36px rgba(122,27,27,.3); }
+
+    /* delay – hidden initially */
+    .cta-delayed { opacity: 0; pointer-events: none; transition: opacity .6s ease; }
+    .cta-delayed.visible { opacity: 1; pointer-events: auto; }
+
+    .cta-note {
+      display: block;
+      margin-top: 12px;
+      font-size: .78rem;
+      color: var(--texto-light);
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--vermelho);
+      padding: 16px 20px;
+      text-align: center;
+      color: rgba(255,255,255,.85);
+      font-size: .82rem;
+      letter-spacing: .02em;
+      display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: center; align-items: center;
+    }
+    .trust-bar span { display: inline-flex; align-items: center; gap: 6px; }
+    .trust-bar svg { width: 16px; height: 16px; fill: var(--dourado-light); flex-shrink: 0; }
+
+    /* ===== SECTION TITLES ===== */
+    .section-label {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--dourado-dark);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      color: var(--texto-light);
+      max-width: 620px;
+      margin: 0 auto 40px;
+      font-size: clamp(.92rem, 2.2vw, 1.05rem);
+    }
+
+    /* ===== CARDS GRID ===== */
+    .cards { display: grid; gap: 24px; }
+    @media (min-width: 640px) { .cards--2 { grid-template-columns: 1fr 1fr; } }
+
+    .card {
+      background: var(--branco);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      box-shadow: var(--sombra);
+      border: 1px solid rgba(201,168,76,.12);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sombra-hover);
+    }
+    .card-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+    .card-icon--gold { background: rgba(201,168,76,.14); }
+    .card-icon--red  { background: rgba(122,27,27,.10); }
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+    .card p { color: var(--texto-light); font-size: .93rem; }
+
+    /* ===== BENEFITS LIST ===== */
+    .benefits-section {
+      background:
+        linear-gradient(170deg, var(--vermelho) 0%, var(--vermelho-deep) 100%);
+      color: var(--branco);
+      position: relative;
+    }
+    .benefits-section .section-label { color: var(--dourado-light); }
+    .benefits-section .section-title { color: var(--branco); }
+    .benefits-section .section-desc  { color: rgba(255,255,255,.72); }
+
+    .benefit-grid { display: grid; gap: 20px; }
+    @media (min-width: 640px) { .benefit-grid { grid-template-columns: 1fr 1fr; } }
+
+    .benefit-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-sm);
+      padding: 24px 20px;
+      backdrop-filter: blur(4px);
+      transition: background .3s;
+    }
+    .benefit-item:hover { background: rgba(255,255,255,.12); }
+    .benefit-check {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--verde);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .benefit-check svg { width: 16px; height: 16px; fill: #fff; }
+    .benefit-item h3 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700; font-size: .95rem;
+      color: var(--dourado-light);
+      margin-bottom: 6px;
+    }
+    .benefit-item p { color: rgba(255,255,255,.78); font-size: .88rem; line-height: 1.55; }
+
+    /* ===== PRICE SECTION ===== */
+    .price-section {
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(201,168,76,.12) 0%, transparent 55%),
+        var(--creme-light);
+    }
+    .price-card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--branco);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      box-shadow: 0 8px 48px rgba(90,20,20,.10);
+      border: 2px solid rgba(201,168,76,.25);
+      text-align: center;
+    }
+    .price-old {
+      font-size: 1.1rem; color: var(--texto-light);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .price-new {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 4.2rem);
+      font-weight: 800;
+      color: var(--vermelho);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .price-tag {
+      display: inline-block;
+      background: rgba(201,168,76,.15);
+      color: var(--dourado-dark);
+      font-weight: 700; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase;
+      padding: 4px 14px; border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    /* ===== GUARANTEE ===== */
+    .guarantee {
+      display: flex; gap: 20px; align-items: center;
+      background: var(--branco);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--sombra);
+      border-left: 4px solid var(--verde);
+      max-width: 680px;
+      margin: 0 auto 48px;
+      text-align: left;
+    }
+    .guarantee-badge {
+      flex-shrink: 0;
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--verde) 0%, var(--verde-light) 100%);
+      display: flex; align-items: center; justify-content: center;
+      animation: float 3s ease-in-out infinite;
+    }
+    .guarantee-badge svg { width: 32px; height: 32px; fill: #fff; }
+    .guarantee h3 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700; font-size: 1.05rem;
+      color: var(--verde);
+      margin-bottom: 6px;
+    }
+    .guarantee p { font-size: .88rem; color: var(--texto-light); }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 680px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid rgba(201,168,76,.2);
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      width: 100%;
+      background: none; border: none;
+      padding: 20px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem; font-weight: 600;
+      color: var(--vermelho);
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      text-align: left;
+    }
+    .faq-q::after {
+      content: '+';
+      font-size: 1.4rem; font-weight: 300;
+      color: var(--dourado);
+      transition: transform .3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease, padding .3s;
+      color: var(--texto-light);
+      font-size: .92rem;
+    }
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--vermelho-deep);
+      color: rgba(255,255,255,.65);
+      text-align: center;
+      padding: 32px 20px;
+      font-size: .78rem;
+    }
+    footer a { color: rgba(255,255,255,.8); text-decoration: underline; }
+    footer a:hover { color: var(--dourado-light); }
+
+    /* ===== VALUE PILLARS ===== */
+    .pillars-section {
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(201,168,76,.10) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(122,27,27,.06) 0%, transparent 50%),
+        linear-gradient(180deg, var(--creme) 0%, #F5ECD8 100%);
+      position: relative;
+    }
+    .pillars-grid {
+      display: grid;
+      gap: 24px;
+    }
+    @media (min-width: 768px) { .pillars-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+    .pillar {
+      background: var(--branco);
+      border-radius: var(--radius);
+      padding: 36px 24px 32px;
+      box-shadow: var(--sombra);
+      border-top: 4px solid var(--dourado);
+      text-align: center;
+      transition: transform .3s, box-shadow .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dourado), var(--dourado-light), var(--dourado));
+      background-size: 200% 100%;
+      animation: shimmer 3s linear infinite;
+    }
+    .pillar:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-hover);
+    }
+    .pillar-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-dark) 100%);
+      color: var(--branco);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(201,168,76,.35);
+    }
+    .pillar-number--icon {
+      font-size: 1.6rem;
+      background: linear-gradient(135deg, var(--verde) 0%, var(--verde-light) 100%);
+      box-shadow: 0 4px 20px rgba(27,107,58,.3);
+    }
+    .pillar-number--red {
+      background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-deep) 100%);
+      box-shadow: 0 4px 20px rgba(122,27,27,.3);
+    }
+    .pillar h3 {
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .pillar p {
+      color: var(--texto-light);
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+    .pillar-highlight {
+      display: inline-block;
+      background: rgba(201,168,76,.12);
+      color: var(--dourado-dark);
+      font-weight: 700;
+      font-size: .75rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-top: 16px;
+    }
+    .pillar-highlight--green {
+      background: rgba(27,107,58,.10);
+      color: var(--verde);
+    }
+    .pillar-highlight--red {
+      background: rgba(122,27,27,.10);
+      color: var(--vermelho);
+    }
+
+    /* ===== RESPONSIVE HELPERS ===== */
+    @media (max-width: 640px) {
+      .guarantee { flex-direction: column; text-align: center; }
+      .hero { padding-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- =========================================================
+     HERO SECTION
+     ========================================================= -->
+<section class="hero">
+  <div class="hero-inner fade-up">
+    <div class="hero-badge">
+      <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor"><path d="M10 1l2.39 4.84L18 6.77l-4 3.9.94 5.5L10 13.57l-4.94 2.6.94-5.5-4-3.9 5.61-.93z"/></svg>
+      Edição Especial de Natal 2026
+    </div>
+
+    <h1>
+      Aprenda a fazer <span>Velas Comestíveis Gourmet</span>: Transforme ingredientes simples em uma experiência inesquecível para a sua ceia ou crie um negócio altamente lucrativo neste fim de ano.
+    </h1>
+
+    <p class="hero-sub">
+      Descubra o método simples para criar velas de manteiga de ervas e chocolate usando formas caseiras. O segredo mais bem guardado dos jantares de luxo, agora na sua cozinha.
+    </p>
+
+    <!-- VSL – Smart Autoplay (muted) -->
+    <div class="vsl-wrapper">
+      <div class="vsl-ratio">
+        <video src="placeholder-video.mp4" muted autoplay playsinline preload="metadata"></video>
+      </div>
+    </div>
+
+    <!-- CTA – aparece após delay (ajuste o tempo no script no final da página) -->
+    <a href="https://pay.cakto.com.br/DASzMjB" target="_blank" class="btn-cta cta-delayed" id="cta-hero">
+      QUERO ACESSAR O GUIA AGORA POR APENAS R$&nbsp;37
+    </a>
+    <small class="cta-note">🔒 Pagamento seguro · Acesso imediato</small>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span>
+    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+    Compra 100% Segura
+  </span>
+  <span>
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+    Garantia de 7 Dias
+  </span>
+  <span>
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10z"/></svg>
+    Acesso por E-mail e WhatsApp
+  </span>
+  <span>
+    <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1H6.5c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.88-4.4z"/></svg>
+    Pagamento Único
+  </span>
+</div>
+
+<!-- =========================================================
+     SEÇÃO 2 – PARA QUEM É ESTE GUIA?
+     ========================================================= -->
+<section class="section" style="background: var(--creme-light);">
+  <div class="container text-center">
+    <span class="section-label">Dois caminhos, um único guia</span>
+    <h2 class="section-title">Para quem é este Guia?</h2>
+    <p class="section-desc">Não importa se o seu objetivo é surpreender a família ou faturar alto no fim de ano — este guia foi feito para você.</p>
+
+    <div class="cards cards--2">
+      <!-- CARD 1 -->
+      <div class="card">
+        <div class="card-icon card-icon--gold">🕯️</div>
+        <h3>Para Impressionar na sua Ceia</h3>
+        <p>
+          Esqueça a decoração tradicional. Imagine a cena: você acende as velas da mesa e, minutos depois, seus convidados mergulham torradas e frios na "cera" derretida — um creme quente e perfeito de manteiga, alho assado e sal rosa. E na hora da sobremesa, velas de doce de leite e chocolate derretendo lentamente sobre o chocotone. Você vai criar memórias (e fotos) que sua família jamais esquecerá.
+        </p>
+      </div>
+      <!-- CARD 2 -->
+      <div class="card">
+        <div class="card-icon card-icon--red">💰</div>
+        <h3>Para Criar uma Renda Extra Lucrativa</h3>
+        <p>
+          Fuja da guerra de preços dos panetones tradicionais. As velas comestíveis possuem um altíssimo valor percebido e zero concorrência na maioria das cidades. O melhor? Você utiliza insumos baratos e moldes ultra econômicos, como copos descartáveis e pavio de algodão. Custos baixos, produção rápida e margem de lucro que pode ultrapassar os <strong>400%</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SEÇÃO – 3 PILARES DE VALOR (30 Receitas, Insumos, Baixo Custo)
+     ========================================================= -->
+<section class="section pillars-section">
+  <div class="container text-center">
+    <span class="section-label">O que torna este guia único</span>
+    <h2 class="section-title">Três Pilares que Garantem o seu Resultado</h2>
+    <p class="section-desc">
+      Este não é mais um e-book genérico. Cada detalhe foi pensado para que você execute com confiança — sem adivinhar nada, sem gastar além do necessário.
+    </p>
+
+    <div class="pillars-grid">
+
+      <!-- PILAR 1 – 30 Receitas -->
+      <div class="pillar">
+        <div class="pillar-number">30</div>
+        <h3>Receitas Exclusivas de Velas Comestíveis</h3>
+        <p>
+          São <strong>30 receitas testadas e detalhadas</strong>, mesclando opções <strong>doces</strong> (chocolate belga, doce de leite, brigadeiro, Nutella) e <strong>salgadas</strong> (manteiga de ervas finas, queijos artesanais, alho assado com flor de sal). Um cardápio completo para você variar a cada ocasião — e nunca ficar sem novidades para surpreender ou vender.
+        </p>
+        <span class="pillar-highlight">Doces + Salgadas</span>
+      </div>
+
+      <!-- PILAR 2 – Lista de Insumos -->
+      <div class="pillar">
+        <div class="pillar-number pillar-number--icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM7 17h5v-1H7v1zm0-2h10v-1H7v1zm0-2h10v-1H7v1z"/></svg>
+        </div>
+        <h3>Lista Exata de Insumos — Sem Adivinhação</h3>
+        <p>
+          Você não precisará adivinhar nada. O guia detalha <strong>exatamente quais ingredientes</strong> usar, as <strong>marcas com melhor custo-benefício</strong> e as proporções certas para garantir a textura ideal. Cada receita indica a quantidade precisa para evitar que a vela derreta antes de ser acesa — resultado profissional desde a primeira tentativa.
+        </p>
+        <span class="pillar-highlight pillar-highlight--green">Zero Desperdício</span>
+      </div>
+
+      <!-- PILAR 3 – Baixo Custo -->
+      <div class="pillar">
+        <div class="pillar-number pillar-number--red">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1H6.5c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.88-4.4z"/></svg>
+        </div>
+        <h3>Passo a Passo Desenhado para Gastar Pouco</h3>
+        <p>
+          O método foi <strong>criado para custar centavos</strong>. Você aprende a usar <strong>moldes improvisados</strong> (copos descartáveis, forminhas de gelo) e insumos acessíveis que encontra em qualquer mercado. Para uso pessoal, a vela sai por menos de R$&nbsp;5. Para quem vai vender, a margem de lucro pode <strong>ultrapassar 400%</strong> — com produção rápida e escalável.
+        </p>
+        <span class="pillar-highlight pillar-highlight--red">Margem de até 400%</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SEÇÃO 3 – O QUE VOCÊ VAI RECEBER HOJE
+     ========================================================= -->
+<section class="section benefits-section">
+  <div class="container text-center">
+    <span class="section-label">Conteúdo do Guia</span>
+    <h2 class="section-title">O que você vai receber hoje</h2>
+    <p class="section-desc">
+      Enfeites natalinos caros vão para o lixo. Confeitarias cobram fortunas por itens gourmet. Hoje, com um investimento menor que um lanche, você adquire uma habilidade lucrativa para a vida toda.
+    </p>
+
+    <div class="benefit-grid">
+      <!-- 1 -->
+      <div class="benefit-item">
+        <div class="benefit-check">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div>
+          <h3>A Lista de Ingredientes Exatos</h3>
+          <p>As marcas e proporções que garantem a textura perfeita, sem derreter antes da hora.</p>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="benefit-item">
+        <div class="benefit-check">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div>
+          <h3>Moldagem e Secagem Passo a Passo</h3>
+          <p>O tempo exato de geladeira para que a estrutura fique firme e impecável.</p>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="benefit-item">
+        <div class="benefit-check">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div>
+          <h3>O Truque do Hashi</h3>
+          <p>O segredo simples para manter o pavio de algodão perfeitamente centralizado durante a secagem.</p>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="benefit-item">
+        <div class="benefit-check">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div>
+          <h3>Desenforme Perfeito</h3>
+          <p>A técnica para tirar do copo descartável sem trincar ou quebrar as bordas da sua vela.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SEÇÃO DE PREÇO E CTA
+     ========================================================= -->
+<section class="section price-section">
+  <div class="container text-center">
+    <span class="section-label">Oferta especial</span>
+    <h2 class="section-title">Comece agora por um valor simbólico</h2>
+
+    <div class="price-card">
+      <p class="price-old">De R$ 97,00</p>
+      <p class="price-new">R$ 37<small style="font-size:.45em; vertical-align:super;">,00</small></p>
+      <span class="price-tag">Pagamento Único · Acesso Vitalício</span>
+
+      <br>
+      <a href="https://pay.cakto.com.br/DASzMjB" target="_blank" class="btn-cta btn-cta-secondary cta-delayed" id="cta-price">
+        SIM! QUERO APRENDER A FAZER VELAS COMESTÍVEIS
+      </a>
+      <small class="cta-note" style="color:var(--texto-light);">🔒 Ambiente seguro · Aprovação instantânea · Acesso imediato</small>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SEÇÃO 4 – GARANTIA & FAQ
+     ========================================================= -->
+<section class="section" style="background: var(--creme);">
+  <div class="container">
+    <!-- GUARANTEE -->
+    <div class="guarantee">
+      <div class="guarantee-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
+      </div>
+      <div>
+        <h3>7 Dias de Garantia Incondicional</h3>
+        <p>Seu investimento está protegido pelo Código de Defesa do Consumidor. Baixe o guia, leia as receitas e, se achar que não é para você, devolvemos 100% do seu dinheiro. Sem letras miúdas.</p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="text-center" style="margin-bottom: 32px;">
+      <span class="section-label">Tire suas dúvidas</span>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">É seguro comer?</button>
+        <div class="faq-a">
+          <p>Sim, 100% seguro. O guia ensina a utilizar pavios adequados (como pavio de algodão culinário) e ingredientes frescos. A chama apenas aquece a base de manteiga ou chocolate.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Precisa de equipamento caro?</button>
+        <div class="faq-a">
+          <p>Não. Você usará itens que já tem na cozinha e moldes descartáveis super baratos, como copos de isopor ou plástico maleável.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Quanto tempo a vela dura fora da geladeira?</button>
+        <div class="faq-a">
+          <p>No guia, ensinamos o ponto de temperagem correto para que a vela mantenha o formato perfeito à temperatura ambiente durante toda a ceia, derretendo apenas quando acesa.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Como recebo o guia?</button>
+        <div class="faq-a">
+          <p>Imediatamente após a aprovação do pagamento, você receberá o acesso pelo seu e-mail e WhatsApp, de forma totalmente automatizada.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA final -->
+    <div class="text-center" style="margin-top: 48px;">
+      <a href="https://pay.cakto.com.br/DASzMjB" target="_blank" class="btn-cta">
+        QUERO ACESSAR O GUIA AGORA POR APENAS R$&nbsp;37
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer>
+  <p>© 2026 Guia Prático de Velas Comestíveis Gourmet. Todos os direitos reservados.</p>
+  <p style="margin-top:8px;">
+    <a href="#">Política de Privacidade</a> &nbsp;·&nbsp; <a href="#">Termos de Uso</a>
+  </p>
+</footer>
+
+<!-- =========================================================
+     SCRIPTS
+     ========================================================= -->
+<script>
+  // === CTA Delay ===
+  // Ajuste o valor em milissegundos: 60000 = 1 min, 120000 = 2 min, etc.
+  const CTA_DELAY_MS = 60000;
+  setTimeout(() => {
+    document.querySelectorAll('.cta-delayed').forEach(el => el.classList.add('visible'));
+  }, CTA_DELAY_MS);
+
+  // === FAQ Accordion ===
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // === Scroll Reveal (lightweight) ===
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('fade-up'); observer.unobserve(e.target); }});
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.card, .pillar, .benefit-item, .price-card, .guarantee').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
