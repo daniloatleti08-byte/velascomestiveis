@@ -297,35 +297,82 @@
     }
 
     /* ===== CARDS GRID ===== */
-    .cards { display: grid; gap: 24px; }
+    .cards { display: grid; gap: 28px; }
     @media (min-width: 640px) { .cards--2 { grid-template-columns: 1fr 1fr; } }
 
     .card {
       background: var(--branco);
       border-radius: var(--radius);
-      padding: 32px 24px;
       box-shadow: var(--sombra);
-      border: 1px solid rgba(201,168,76,.12);
+      border: 1px solid rgba(201,168,76,.18);
       transition: transform .3s, box-shadow .3s;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
     }
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
       box-shadow: var(--sombra-hover);
     }
-    .card-icon {
-      width: 56px; height: 56px;
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem;
-      margin-bottom: 18px;
+    .card-media {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      background: #2a1010;
     }
-    .card-icon--gold { background: rgba(201,168,76,.14); }
-    .card-icon--red  { background: rgba(122,27,27,.10); }
+    @media (min-width: 768px) {
+      .card-media { height: 270px; }
+    }
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      transition: transform .4s ease;
+      display: block;
+    }
+    .card:hover .card-img {
+      transform: scale(1.05);
+    }
+    .card-pill {
+      position: absolute;
+      bottom: 14px;
+      left: 16px;
+      background: rgba(122,27,27,.92);
+      backdrop-filter: blur(8px);
+      color: var(--branco);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(201,168,76,.4);
+      box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    }
+    .card-pill--green {
+      background: rgba(27,107,58,.92);
+      border-color: rgba(255,255,255,.3);
+    }
+    .card-body {
+      padding: 28px 24px 32px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
     .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 12px;
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+      line-height: 1.3;
+      color: var(--vermelho);
     }
-    .card p { color: var(--texto-light); font-size: .93rem; }
+    .card p {
+      color: var(--texto-light);
+      font-size: .95rem;
+      line-height: 1.7;
+    }
 
     /* ===== BENEFITS LIST ===== */
     .benefits-section {
@@ -677,21 +724,42 @@
     <p class="section-desc">Não importa se o seu objetivo é surpreender a família ou faturar alto no fim de ano — este guia foi feito para você.</p>
 
     <div class="cards cards--2">
-      <!-- CARD 1 -->
+      <!-- CARD 1: Impressionar na Ceia -->
       <div class="card">
-        <div class="card-icon card-icon--gold">🕯️</div>
-        <h3>Para Impressionar na sua Ceia</h3>
-        <p>
-          Esqueça a decoração tradicional. Imagine a cena: você acende as velas da mesa e, minutos depois, seus convidados mergulham torradas e frios na "cera" derretida — um creme quente e perfeito de manteiga, alho assado e sal rosa. E na hora da sobremesa, velas de doce de leite e chocolate derretendo lentamente sobre o chocotone. Você vai criar memórias (e fotos) que sua família jamais esquecerá.
-        </p>
+        <div class="card-media">
+          <img
+            src="images/ceia-impressionar.jpg"
+            alt="Vela comestível de manteiga de ervas derretida na Ceia de Natal com pão artesanal"
+            class="card-img"
+            loading="lazy"
+          >
+          <span class="card-pill">Uso Pessoal · Família & Ceia</span>
+        </div>
+        <div class="card-body">
+          <h3>Para Impressionar na sua Ceia</h3>
+          <p>
+            Esqueça a decoração tradicional. Imagine a cena: você acende as velas da mesa e, minutos depois, seus convidados mergulham torradas e frios na "cera" derretida — um creme quente e perfeito de manteiga, alho assado e sal rosa. E na hora da sobremesa, velas de doce de leite e chocolate derretendo lentamente sobre o chocotone. Você vai criar memórias (e fotos) que sua família jamais esquecerá.
+          </p>
+        </div>
       </div>
-      <!-- CARD 2 -->
+
+      <!-- CARD 2: Renda Extra Lucrativa -->
       <div class="card">
-        <div class="card-icon card-icon--red">💰</div>
-        <h3>Para Criar uma Renda Extra Lucrativa</h3>
-        <p>
-          Fuja da guerra de preços dos panetones tradicionais. As velas comestíveis possuem um altíssimo valor percebido e zero concorrência na maioria das cidades. O melhor? Você utiliza insumos baratos e moldes ultra econômicos, como copos descartáveis e pavio de algodão. Custos baixos, produção rápida e margem de lucro que pode ultrapassar os <strong>400%</strong>.
-        </p>
+        <div class="card-media">
+          <img
+            src="images/renda-extra.jpg"
+            alt="Produção e encomendas de velas comestíveis embaladas para presente de Natal"
+            class="card-img"
+            loading="lazy"
+          >
+          <span class="card-pill card-pill--green">Negócio Lucrativo · Margem de 400%</span>
+        </div>
+        <div class="card-body">
+          <h3>Para Criar uma Renda Extra Lucrativa</h3>
+          <p>
+            Fuja da guerra de preços dos panetones tradicionais. As velas comestíveis possuem um altíssimo valor percebido e zero concorrência na maioria das cidades. O melhor? Você utiliza insumos baratos e moldes ultra econômicos, como copos descartáveis e pavio de algodão. Custos baixos, produção rápida e margem de lucro que pode ultrapassar os <strong>400%</strong>.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -909,7 +977,7 @@
   // - Link: 'https://www.youtube.com/watch?v=...'
   // - Shorts: 'https://www.youtube.com/shorts/...'
   // - Link curto: 'https://youtu.be/...'
-  const YOUTUBE_VIDEO_URL_OU_ID = 'FqZY6GlQDZw';
+  const YOUTUBE_VIDEO_URL_OU_ID = 'SEU_VIDEO_ID';
 
   function aplicarVideoYouTube(input) {
     const placeholder = document.getElementById('vsl-placeholder');
