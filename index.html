@@ -8,8 +8,7 @@
 
   <!-- =========================================================
        META PIXEL CODE (Facebook Ads)
-       INSTRUÇÃO: Substitua 'SEU_PIXEL_ID_AQUI' pelo ID numérico do seu Pixel da Meta
-       Exemplo: const META_PIXEL_ID = '123456789012345';
+       Pixel ID Oficial Ativo: 1684026826038026
        ========================================================= -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -21,13 +20,9 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
 
-    // CONFIGURE SEU PIXEL ID AQUI:
     const META_PIXEL_ID = '1684026826038026';
-
-    if (META_PIXEL_ID && META_PIXEL_ID !== '1684026826038026') {
-      fbq('init', META_PIXEL_ID);
-      fbq('track', 'PageView');
-    }
+    fbq('init', '1684026826038026');
+    fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
@@ -1189,7 +1184,7 @@
   // ==============================================================
   document.querySelectorAll('a[href*="cakto.com.br"]').forEach(btn => {
     btn.addEventListener('click', () => {
-      if (typeof fbq === 'function' && typeof META_PIXEL_ID !== 'undefined' && META_PIXEL_ID !== 'SEU_PIXEL_ID_AQUI') {
+      if (typeof fbq === 'function') {
         fbq('track', 'InitiateCheckout', {
           content_name: 'Guia Prático de Velas Comestíveis Gourmet',
           value: 37.00,
