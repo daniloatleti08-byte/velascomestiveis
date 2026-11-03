@@ -661,25 +661,16 @@
             playsinline=1    → reproduz inline no celular (não abre fullscreen)
             controls=1       → mostra controles para o usuário poder desmutar
             iv_load_policy=3 → desativa anotações
-            playlist=FqZY6GlQDZw → necessário para loop funcionar
+            playlist=SEU_VIDEO_ID → necessário para loop funcionar
     -->
     <div class="vsl-wrapper">
       <div class="vsl-ratio">
-        <!-- Placeholder temático de apresentação (ativo enquanto o ID do YouTube não for configurado) -->
-        <div class="vsl-placeholder" id="vsl-placeholder">
-          <div class="vsl-play-btn">
-            <svg viewBox="0 0 24 24" width="34" height="34" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <p class="vsl-placeholder-title">Vídeo Oficial de Apresentação</p>
-          <p class="vsl-placeholder-sub">Cole o link do seu vídeo do YouTube no script no final da página</p>
-        </div>
         <iframe
           id="vsl-iframe"
-          style="display: none;"
-          src=""
+          src="https://www.youtube.com/embed/FqZY6GlQDZw?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&playlist=FqZY6GlQDZw"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-          title="Velas Comestíveis Gourmet – Apresentação"
+          title="Velas Comestíveis Gourmet – Vídeo Oficial"
         ></iframe>
       </div>
     </div>
@@ -977,12 +968,12 @@
   // - Link: 'https://www.youtube.com/watch?v=...'
   // - Shorts: 'https://www.youtube.com/shorts/...'
   // - Link curto: 'https://youtu.be/...'
-  const YOUTUBE_VIDEO_URL_OU_ID = 'SEU_VIDEO_ID';
+  const YOUTUBE_VIDEO_URL_OU_ID = 'FqZY6GlQDZw';
 
   function aplicarVideoYouTube(input) {
     const placeholder = document.getElementById('vsl-placeholder');
     const iframe = document.getElementById('vsl-iframe');
-    if (!input || input === 'FqZY6GlQDZw') {
+    if (!input || input === 'SEU_VIDEO_ID') {
       if (placeholder) placeholder.style.display = 'flex';
       if (iframe) iframe.style.display = 'none';
       return;
