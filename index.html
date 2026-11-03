@@ -718,6 +718,62 @@
       .guarantee { flex-direction: column; text-align: center; }
       .hero { padding-top: 48px; }
     }
+
+    /* ===== WHATSAPP FLOATING BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #25D366;
+      color: white;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 9999; /* Fica acima de tudo na página */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: float-wa 3s ease-in-out infinite;
+    }
+    .whatsapp-float svg {
+      width: 38px;
+      height: 38px;
+      fill: currentColor;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+    @keyframes float-wa {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    /* Balão de Texto (Tooltip) que aparece ao passar o mouse */
+    .whatsapp-float::before {
+      content: 'Dúvidas?';
+      position: absolute;
+      right: 76px;
+      background: #FFFFFF;
+      color: #333333;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateX(10px);
+      white-space: nowrap;
+    }
+    .whatsapp-float:hover::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
   </style>
 </head>
 <body>
@@ -740,21 +796,7 @@
       Descubra o método simples para criar velas de manteiga de ervas e chocolate usando formas caseiras. O segredo mais bem guardado dos jantares de luxo, agora na sua cozinha.
     </p>
 
-    <!-- VSL – YouTube Vertical (9:16) – Smart Autoplay mudo
-         INSTRUÇÕES:
-         1. Substitua SEU_VIDEO_ID abaixo pelo ID do seu vídeo do YouTube.
-            Ex.: se a URL é https://youtu.be/abc123xyz, o ID é abc123xyz
-         2. Parâmetros já configurados:
-            autoplay=1  → inicia automaticamente
-            mute=1      → começa mudo (obrigatório para autoplay)
-            loop=1      → repete o vídeo
-            rel=0        → não exibe vídeos relacionados ao final
-            modestbranding=1 → minimiza logo do YouTube
-            playsinline=1    → reproduz inline no celular (não abre fullscreen)
-            controls=1       → mostra controles para o usuário poder desmutar
-            iv_load_policy=3 → desativa anotações
-            playlist=SEU_VIDEO_ID → necessário para loop funcionar
-    -->
+    <!-- VSL – YouTube Vertical (9:16) – Smart Autoplay mudo -->
     <div class="vsl-wrapper">
       <div class="vsl-ratio">
         <iframe
@@ -1065,6 +1107,19 @@
 </footer>
 
 <!-- =========================================================
+     WHATSAPP FLOATING BUTTON
+     ========================================================= -->
+<a href="https://wa.me/5511914152947?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20Guia%20de%20Velas%20Comest%C3%ADveis." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 24 24">
+    <path d="M12.031 0C5.385 0 0 5.383 0 12.03c0 2.128.553 4.2 1.603 6.02L.21 23.46l5.572-1.462A11.96 11.96 0 0012.031 24c6.646 0 12.03-5.383 12.03-12.03S18.677 0 12.031 0zm5.952 17.106c-.244.685-1.417 1.282-1.946 1.343-.418.049-1.002.164-3.136-.722-2.585-1.074-4.225-3.69-4.354-3.864-.13-.173-1.04-1.385-1.04-2.643 0-1.258.654-1.878.887-2.124.232-.246.505-.308.673-.308.17 0 .338.003.486.01.161.008.377-.061.593.456.223.535.753 1.838.82 1.97.067.133.111.288.028.455-.083.167-.126.271-.253.421-.127.15-.265.33-.38.455-.126.136-.263.284-.112.545.152.261.674 1.114 1.442 1.8.991.884 1.83 1.155 2.097 1.285.267.13.423.111.583-.07.16-.183.69-1.32.906-1.748.215-.429.432-.34.674-.246.241.094 1.536.723 1.8.854.263.13.438.196.502.304.064.11.064.631-.18 1.316z"/>
+  </svg>
+</a>
+
+<!-- =========================================================
      SCRIPTS
      ========================================================= -->
 <script>
@@ -1072,11 +1127,6 @@
   // 1. CONFIGURAÇÃO DO VÍDEO DO YOUTUBE
   // ==============================================================
   // Cole abaixo a URL ou ID do seu vídeo do YouTube:
-  // Exemplos suportados:
-  // - ID: 'SEU_VIDEO_ID' (ou ex: 'dQw4w9WgXcQ')
-  // - Link: 'https://www.youtube.com/watch?v=...'
-  // - Shorts: 'https://www.youtube.com/shorts/...'
-  // - Link curto: 'https://youtu.be/...'
   const YOUTUBE_VIDEO_URL_OU_ID = 'FqZY6GlQDZw';
 
   // API YouTube & Controle do som
@@ -1152,15 +1202,11 @@
   // ==============================================================
   // 2. DELAY DE 4 MINUTOS NO BOTÃO ABAIXO DO VÍDEO (HERO)
   // ==============================================================
-  // 4 minutos = 4 * 60 * 1000 = 240.000 milissegundos
   const CTA_DELAY_MS = 4 * 60 * 1000;
 
-  // DICA DE TESTE: Para testar a página sem esperar 4 minutos,
-  // basta adicionar ?teste ou ?preview na URL (ex: index.html?teste)
   const urlParams = new URLSearchParams(window.location.search);
   const skipDelay = urlParams.has('teste') || urlParams.has('preview') || urlParams.has('semdelay');
 
-  // Lembra na mesma sessão (evita que o usuário perca o botão ao dar F5 após os 4 minutos)
   const jaAssistiu = sessionStorage.getItem('vsl_cta_liberado') === 'true';
 
   function liberarBotaoAbaixoDoVideo() {
