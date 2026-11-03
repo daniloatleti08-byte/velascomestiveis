@@ -38,6 +38,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- YouTube Iframe API para controle de áudio e unmute inteligente -->
+  <script src="https://www.youtube.com/iframe_api"></script>
   <style>
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -198,6 +200,101 @@
       color: rgba(255,255,255,.75);
       max-width: 280px;
       line-height: 1.5;
+    }
+
+    /* ===== BOTÃO GRANDE PARA LIGAR O SOM (SMART UNMUTE OVERLAY) ===== */
+    .vsl-unmute-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 8;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 16px;
+      padding-top: 28%;
+      background: radial-gradient(circle at center, rgba(30,10,10,0.35) 0%, rgba(10,3,3,0.7) 100%);
+      cursor: pointer;
+      transition: opacity .4s ease, visibility .4s ease;
+    }
+    .vsl-unmute-overlay.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .vsl-unmute-btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(135deg, #FFF9F0 0%, #E8D48B 30%, #C9A84C 70%, #A88832 100%);
+      color: #3A1010;
+      border: 3px solid #FFFFFF;
+      padding: 18px 22px;
+      border-radius: 100px;
+      box-shadow: 0 0 35px rgba(201,168,76,.85), 0 10px 32px rgba(0,0,0,.6);
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+      animation: unmute-pulse 1.8s infinite ease-in-out;
+      transition: transform .25s ease, box-shadow .25s ease;
+      width: 100%;
+      max-width: 330px;
+    }
+    .vsl-unmute-btn:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 50px rgba(201,168,76,1), 0 14px 40px rgba(0,0,0,.75);
+    }
+    .vsl-unmute-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-deep) 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(122,27,27,.4);
+      animation: icon-sound-wave 1.2s infinite ease-in-out;
+    }
+    .vsl-unmute-content {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .vsl-unmute-alert {
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      color: #7A1B1B;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .vsl-unmute-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: .01em;
+      color: #2D0808;
+      text-transform: uppercase;
+    }
+    .vsl-unmute-sub {
+      font-size: .72rem;
+      font-weight: 600;
+      color: #5C2E0E;
+      margin-top: 3px;
+    }
+    @keyframes unmute-pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 28px rgba(201,168,76,.75), 0 8px 24px rgba(0,0,0,.5);
+      }
+      50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 48px rgba(201,168,76,1), 0 12px 36px rgba(0,0,0,.7);
+      }
+    }
+    @keyframes icon-sound-wave {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.12) rotate(-5deg); }
     }
 
     /* ===== CTA BUTTON ===== */
@@ -667,11 +764,28 @@
       <div class="vsl-ratio">
         <iframe
           id="vsl-iframe"
-          src="https://www.youtube.com/embed/FqZY6GlQDZw?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&playlist=FqZY6GlQDZw"
+          src="https://www.youtube.com/embed/FqZY6GlQDZw?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&playlist=FqZY6GlQDZw&enablejsapi=1"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
           title="Velas Comestíveis Gourmet – Vídeo Oficial"
         ></iframe>
+
+        <!-- BOTÃO GRANDE DE ATIVAR O SOM (SMART AUTOPLAY UNMUTE) -->
+        <div class="vsl-unmute-overlay" id="vsl-unmute-overlay" onclick="desmutarVideo()">
+          <button class="vsl-unmute-btn" id="vsl-unmute-btn" type="button" aria-label="Ligar o som do vídeo">
+            <span class="vsl-unmute-icon">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+              </svg>
+            </span>
+            <span class="vsl-unmute-content">
+              <span class="vsl-unmute-alert">🔊 SEU VÍDEO JÁ COMEÇOU</span>
+              <span class="vsl-unmute-title">CLIQUE PARA LIGAR O SOM</span>
+              <span class="vsl-unmute-sub">Toque aqui para ouvir a apresentação</span>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -970,6 +1084,58 @@
   // - Link curto: 'https://youtu.be/...'
   const YOUTUBE_VIDEO_URL_OU_ID = 'FqZY6GlQDZw';
 
+  // API YouTube & Controle do som
+  let ytPlayer;
+  window.onYouTubeIframeAPIReady = function() {
+    try {
+      ytPlayer = new YT.Player('vsl-iframe', {
+        events: {
+          'onStateChange': function(e) {
+            // Se o usuário interagiu com o player e ativou o áudio
+            if (ytPlayer && typeof ytPlayer.isMuted === 'function' && !ytPlayer.isMuted()) {
+              const overlay = document.getElementById('vsl-unmute-overlay');
+              if (overlay) overlay.style.display = 'none';
+            }
+          }
+        }
+      });
+    } catch(err) {}
+  };
+
+  // Função disparada ao clicar no botão grande de ligar o som
+  function desmutarVideo() {
+    const iframe = document.getElementById('vsl-iframe');
+    const overlay = document.getElementById('vsl-unmute-overlay');
+
+    // 1. postMessage direto para o player do YouTube
+    if (iframe && iframe.contentWindow) {
+      try {
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute' }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'seekTo', args: [0, true] }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo' }), '*');
+      } catch(e) {}
+    }
+
+    // 2. YouTube Iframe API
+    if (ytPlayer && typeof ytPlayer.unMute === 'function') {
+      try {
+        ytPlayer.unMute();
+        ytPlayer.setVolume(100);
+        ytPlayer.seekTo(0);
+        ytPlayer.playVideo();
+      } catch(e) {}
+    }
+
+    // 3. Efeito de saída suave do botão
+    if (overlay) {
+      overlay.classList.add('fade-out');
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 400);
+    }
+  }
+
   function aplicarVideoYouTube(input) {
     const placeholder = document.getElementById('vsl-placeholder');
     const iframe = document.getElementById('vsl-iframe');
@@ -981,7 +1147,7 @@
     const match = input.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))([\w-]{11})/);
     const videoId = match ? match[1] : input.trim();
     if (iframe && videoId && videoId.length === 11) {
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&playlist=${videoId}`;
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&playlist=${videoId}&enablejsapi=1`;
       iframe.style.display = 'block';
       if (placeholder) placeholder.style.display = 'none';
     }
