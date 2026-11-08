@@ -20,13 +20,13 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
 
-    const META_PIXEL_ID = '1684026826038026';
+    const META_PIXEL_ID = '1428548336100912';
     fbq('init', '1684026826038026');
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1684026826038026&ev=PageView&noscript=1" />
+         src="https://www.facebook.com/tr?id=1428548336100912&ev=PageView&noscript=1" />
   </noscript>
   <!-- End Meta Pixel Code -->
 
@@ -1270,6 +1270,37 @@
     observer.observe(el);
   });
 </script>
-
+<!-- SCRIPT PARA REPASSAR UTMS PARA O CHECKOUT -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. Captura todos os parâmetros (UTMs) da URL atual
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // 2. Se existir algum parâmetro na URL...
+    if (urlParams.toString() !== "") {
+      // 3. Procura todos os links (botões) que vão para a Cakto
+      const linksCheckout = document.querySelectorAll('a[href*="pay.cakto.com.br"]');
+      
+      linksCheckout.forEach(function(link) {
+        try {
+          let urlCheckout = new URL(link.href);
+          
+          // 4. Injeta os parâmetros da página direto no link do botão
+          for (const [key, value] of urlParams.entries()) {
+            if (!urlCheckout.searchParams.has(key)) {
+              urlCheckout.searchParams.append(key, value);
+            }
+          }
+          
+          // 5. Atualiza o botão silenciosamente
+          link.href = urlCheckout.toString();
+        } catch(e) {
+          console.error("Erro ao repassar UTMs:", e);
+        }
+      });
+    }
+  });
+</script>
+  
 </body>
 </html>
