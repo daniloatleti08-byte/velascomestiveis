@@ -335,18 +335,11 @@
       box-shadow: 0 10px 36px rgba(201,168,76,.55);
     }
 
-    /* Delay de 4 minutos no botão abaixo do vídeo (hero) */
+    /* CTA SEM DELAY (Aparece imediatamente) */
     .cta-delayed {
-      display: none;
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-    .cta-delayed.visible {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-      animation: fade-up .7s ease-out forwards;
+      display: block; /* Alterado de 'none' para 'block' */
+      opacity: 1;     /* Alterado de '0' para '1' */
+      transform: translateY(0); /* Alterado de 'translateY(18px)' para '0' */
     }
 
     .cta-note {
@@ -826,7 +819,7 @@
       </div>
     </div>
 
-    <!-- CTA ABAIXO DO VÍDEO – Aparece com delay de 4 minutos (240s) -->
+    <!-- CTA ABAIXO DO VÍDEO – APARECE IMEDIATAMENTE (SEM DELAY) -->
     <div class="cta-delayed" id="cta-hero-wrapper">
       <a href="https://pay.cakto.com.br/tmruurb_1275646" target="_blank" class="btn-cta" id="cta-hero">
         QUERO ACESSAR O GUIA AGORA POR APENAS R$&nbsp;37
@@ -1200,30 +1193,8 @@
   aplicarVideoYouTube(YOUTUBE_VIDEO_URL_OU_ID);
 
   // ==============================================================
-  // 2. DELAY DE 4 MINUTOS NO BOTÃO ABAIXO DO VÍDEO (HERO)
+  // 2. DELAY REMOVIDO - O botão agora aparece imediatamente
   // ==============================================================
-  const CTA_DELAY_MS = 4 * 60 * 1000;
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const skipDelay = urlParams.has('teste') || urlParams.has('preview') || urlParams.has('semdelay');
-
-  const jaAssistiu = sessionStorage.getItem('vsl_cta_liberado') === 'true';
-
-  function liberarBotaoAbaixoDoVideo() {
-    const ctaHero = document.getElementById('cta-hero-wrapper');
-    if (ctaHero) {
-      ctaHero.classList.add('visible');
-      if (!skipDelay) {
-        try { sessionStorage.setItem('vsl_cta_liberado', 'true'); } catch(e){}
-      }
-    }
-  }
-
-  if (skipDelay || jaAssistiu) {
-    liberarBotaoAbaixoDoVideo();
-  } else {
-    setTimeout(liberarBotaoAbaixoDoVideo, CTA_DELAY_MS);
-  }
 
   // ==============================================================
   // 3. TRACKING NO PIXEL DA META (INITIATE CHECKOUT)
