@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guia Prático de Velas Comestíveis Gourmet – Aprenda & Lucre neste Natal</title>
-  <meta name="description" content="Aprenda a fazer velas comestíveis gourmet e transforme sua ceia de Natal ou crie um negócio lucrativo. Guia completo por apenas R$37.">
+  <meta name="description" content="Aprenda a fazer velas comestíveis gourmet e transforme sua ceia de Natal ou crie um negócio lucrativo. Guia completo a partir de R$ 19,90.">
 
   <!-- =========================================================
        META PIXEL CODE (Facebook Ads)
@@ -318,28 +318,11 @@
     }
     .btn-cta-secondary:hover { box-shadow: 0 8px 36px rgba(122,27,27,.3); }
 
-    /* Botão específico abaixo do preço */
-    .btn-cta-price {
-      display: inline-block;
-      width: 100%;
-      max-width: 440px;
-      margin: 16px auto 0;
-      padding: 18px 28px;
-      font-size: clamp(1rem, 2.5vw, 1.12rem);
-      background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-dark) 100%);
-      box-shadow: 0 6px 28px rgba(201,168,76,.35);
-      border-radius: 100px;
-    }
-    .btn-cta-price:hover {
-      transform: scale(1.03);
-      box-shadow: 0 10px 36px rgba(201,168,76,.55);
-    }
-
     /* CTA SEM DELAY (Aparece imediatamente) */
     .cta-delayed {
-      display: block; /* Alterado de 'none' para 'block' */
-      opacity: 1;     /* Alterado de '0' para '1' */
-      transform: translateY(0); /* Alterado de 'translateY(18px)' para '0' */
+      display: block; 
+      opacity: 1;     
+      transform: translateY(0); 
     }
 
     .cta-note {
@@ -499,42 +482,32 @@
     }
     .benefit-item p { color: rgba(255,255,255,.78); font-size: .88rem; line-height: 1.55; }
 
-    /* ===== PRICE SECTION ===== */
+    /* ===== NEW PRICE SECTION (PLANS) ===== */
     .price-section {
-      background:
-        radial-gradient(ellipse at 50% 0%, rgba(201,168,76,.12) 0%, transparent 55%),
-        var(--creme-light);
+      background: var(--creme-light);
     }
     .price-card {
-      max-width: 520px;
-      margin: 0 auto;
       background: var(--branco);
       border-radius: var(--radius);
-      padding: 48px 32px;
-      box-shadow: 0 8px 48px rgba(90,20,20,.10);
-      border: 2px solid rgba(201,168,76,.25);
-      text-align: center;
+      box-shadow: 0 8px 32px rgba(90,20,20,.05);
+      border: 1px solid rgba(201,168,76,.15);
+      transition: transform .3s, box-shadow .3s;
     }
-    .price-old {
-      font-size: 1.1rem; color: var(--texto-light);
-      text-decoration: line-through;
-      margin-bottom: 4px;
+    .price-card--featured {
+      border: 3px solid var(--dourado);
+      box-shadow: 0 12px 48px rgba(201,168,76,.25);
+      transform: scale(1.02);
+      z-index: 2;
+    }
+    .price-card--featured:hover {
+      transform: scale(1.04);
+      box-shadow: 0 16px 56px rgba(201,168,76,.35);
     }
     .price-new {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 8vw, 4.2rem);
       font-weight: 800;
       color: var(--vermelho);
       line-height: 1.1;
-      margin-bottom: 4px;
-    }
-    .price-tag {
-      display: inline-block;
-      background: rgba(201,168,76,.15);
-      color: var(--dourado-dark);
-      font-weight: 700; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase;
-      padding: 4px 14px; border-radius: 100px;
-      margin-bottom: 28px;
     }
 
     /* ===== GUARANTEE ===== */
@@ -710,6 +683,7 @@
     @media (max-width: 640px) {
       .guarantee { flex-direction: column; text-align: center; }
       .hero { padding-top: 48px; }
+      .price-card--featured { transform: scale(1); } /* Remove scale on mobile for better fit */
     }
 
     /* ===== WHATSAPP FLOATING BUTTON ===== */
@@ -782,7 +756,7 @@
     </div>
 
     <h1>
-      Aprenda a fazer <span>Velas Comestíveis Gourmet</span>: Transforme ingredientes simples em uma experiência inesquecível para a sua ceia ou crie um negócio altamente lucrativo neste fim de ano.
+      Aprenda a fazer <span>Velas Comestíveis Gourmet</span>: Transforme ingredientes simples em uma experiência inesquecível para a sua ceia ou crie um negócio altamente lucrativo.
     </h1>
 
     <p class="hero-sub">
@@ -819,10 +793,10 @@
       </div>
     </div>
 
-    <!-- CTA ABAIXO DO VÍDEO – APARECE IMEDIATAMENTE (SEM DELAY) -->
+    <!-- CTA ABAIXO DO VÍDEO – APARECE IMEDIATAMENTE -->
     <div class="cta-delayed" id="cta-hero-wrapper">
-      <a href="https://pay.cakto.com.br/tmruurb_1275646" target="_blank" class="btn-cta" id="cta-hero">
-        QUERO ACESSAR O GUIA AGORA POR APENAS R$&nbsp;37
+      <a href="#planos" class="btn-cta" id="cta-hero">
+        VER OPÇÕES DE PLANOS A PARTIR DE R$ 19,90
       </a>
       <small class="cta-note">🔒 Pagamento seguro · Acesso imediato</small>
     </div>
@@ -842,10 +816,6 @@
   <span>
     <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10z"/></svg>
     Acesso por E-mail e WhatsApp
-  </span>
-  <span>
-    <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1H6.5c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.88-4.4z"/></svg>
-    Pagamento Único
   </span>
 </div>
 
@@ -873,7 +843,7 @@
         <div class="card-body">
           <h3>Para Impressionar na sua Ceia</h3>
           <p>
-            Esqueça a decoração tradicional. Imagine a cena: você acende as velas da mesa e, minutos depois, seus convidados mergulham torradas e frios na "cera" derretida — um creme quente e perfeito de manteiga, alho assado e sal rosa. E na hora da sobremesa, velas de doce de leite e chocolate derretendo lentamente sobre o chocotone. Você vai criar memórias (e fotos) que sua família jamais esquecerá.
+            Esqueça a decoração tradicional. Imagine a cena: você acende as velas da mesa e, minutos depois, seus convidados mergulham torradas e frios na "cera" derretida — um creme quente e perfeito de manteiga, alho assado e sal rosa. Você vai criar memórias (e fotos) que sua família jamais esquecerá.
           </p>
         </div>
       </div>
@@ -892,7 +862,7 @@
         <div class="card-body">
           <h3>Para Criar uma Renda Extra Lucrativa</h3>
           <p>
-            Fuja da guerra de preços dos panetones tradicionais. As velas comestíveis possuem um altíssimo valor percebido e zero concorrência na maioria das cidades. O melhor? Você utiliza insumos baratos e moldes ultra econômicos, como copos descartáveis e pavio de algodão. Custos baixos, produção rápida e margem de lucro que pode ultrapassar os <strong>400%</strong>.
+            Fuja da guerra de preços dos panetones tradicionais. As velas comestíveis possuem um altíssimo valor percebido e zero concorrência. Você utiliza insumos baratos e moldes ultra econômicos (copos descartáveis). Custos baixos, produção rápida e margem de lucro que pode ultrapassar os <strong>400%</strong>.
           </p>
         </div>
       </div>
@@ -901,7 +871,7 @@
 </section>
 
 <!-- =========================================================
-     SEÇÃO – 3 PILARES DE VALOR (30 Receitas, Insumos, Baixo Custo)
+     SEÇÃO – 3 PILARES DE VALOR
      ========================================================= -->
 <section class="section pillars-section">
   <div class="container text-center">
@@ -918,7 +888,7 @@
         <div class="pillar-number">30</div>
         <h3>Receitas Exclusivas de Velas Comestíveis</h3>
         <p>
-          São <strong>30 receitas testadas e detalhadas</strong>, mesclando opções <strong>doces</strong> (chocolate belga, doce de leite, brigadeiro, Nutella) e <strong>salgadas</strong> (manteiga de ervas finas, queijos artesanais, alho assado com flor de sal). Um cardápio completo para você variar a cada ocasião — e nunca ficar sem novidades para surpreender ou vender.
+          São <strong>30 receitas testadas e detalhadas</strong>, mesclando opções <strong>doces</strong> (chocolate belga, doce de leite, Nutella) e <strong>salgadas</strong> (manteiga de ervas, queijos, alho assado).
         </p>
         <span class="pillar-highlight">Doces + Salgadas</span>
       </div>
@@ -930,7 +900,7 @@
         </div>
         <h3>Lista Exata de Insumos — Sem Adivinhação</h3>
         <p>
-          Você não precisará adivinhar nada. O guia detalha <strong>exatamente quais ingredientes</strong> usar, as <strong>marcas com melhor custo-benefício</strong> e as proporções certas para garantir a textura ideal. Cada receita indica a quantidade precisa para evitar que a vela derreta antes de ser acesa — resultado profissional desde a primeira tentativa.
+          O guia detalha <strong>exatamente quais ingredientes</strong> usar, as marcas com melhor custo-benefício e as proporções certas para garantir a textura ideal que não derrete antes da hora.
         </p>
         <span class="pillar-highlight pillar-highlight--green">Zero Desperdício</span>
       </div>
@@ -940,11 +910,11 @@
         <div class="pillar-number pillar-number--red">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1H6.5c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.88-4.4z"/></svg>
         </div>
-        <h3>Passo a Passo Desenhado para Gastar Pouco</h3>
+        <h3>Desenhado para Gastar Pouco</h3>
         <p>
-          O método foi <strong>criado para custar centavos</strong>. Você aprende a usar <strong>moldes improvisados</strong> (copos descartáveis, forminhas de gelo) e insumos acessíveis que encontra em qualquer mercado. Para uso pessoal, a vela sai por menos de R$&nbsp;5. Para quem vai vender, a margem de lucro pode <strong>ultrapassar 400%</strong> — com produção rápida e escalável.
+          Você aprende a usar <strong>moldes improvisados</strong> (copos descartáveis) e insumos acessíveis. A vela sai por menos de R$&nbsp;5 para fazer. Para vender, a margem passa dos 400%.
         </p>
-        <span class="pillar-highlight pillar-highlight--red">Margem de até 400%</span>
+        <span class="pillar-highlight pillar-highlight--red">Alta Margem</span>
       </div>
 
     </div>
@@ -952,326 +922,24 @@
 </section>
 
 <!-- =========================================================
-     SEÇÃO 3 – O QUE VOCÊ VAI RECEBER HOJE
+     NOVA SEÇÃO DE PREÇO: PLANO BÁSICO vs PLANO COMPLETO
      ========================================================= -->
-<section class="section benefits-section">
+<section id="planos" class="section price-section">
   <div class="container text-center">
-    <span class="section-label">Conteúdo do Guia</span>
-    <h2 class="section-title">O que você vai receber hoje</h2>
-    <p class="section-desc">
-      Enfeites natalinos caros vão para o lixo. Confeitarias cobram fortunas por itens gourmet. Hoje, com um investimento menor que um lanche, você adquire uma habilidade lucrativa para a vida toda.
-    </p>
+    <span class="section-label">Oferta Especial Limitada</span>
+    <h2 class="section-title">Escolha o seu plano</h2>
+    <p class="section-desc">Você pode começar apenas com o guia de receitas ou garantir o pacote completo de negócio pelo preço de um lanche.</p>
 
-    <div class="benefit-grid">
-      <!-- 1 -->
-      <div class="benefit-item">
-        <div class="benefit-check">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-        </div>
-        <div>
-          <h3>A Lista de Ingredientes Exatos</h3>
-          <p>As marcas e proporções que garantem a textura perfeita, sem derreter antes da hora.</p>
-        </div>
-      </div>
-      <!-- 2 -->
-      <div class="benefit-item">
-        <div class="benefit-check">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-        </div>
-        <div>
-          <h3>Moldagem e Secagem Passo a Passo</h3>
-          <p>O tempo exato de geladeira para que a estrutura fique firme e impecável.</p>
-        </div>
-      </div>
-      <!-- 3 -->
-      <div class="benefit-item">
-        <div class="benefit-check">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-        </div>
-        <div>
-          <h3>O Truque do Hashi</h3>
-          <p>O segredo simples para manter o pavio de algodão perfeitamente centralizado durante a secagem.</p>
-        </div>
-      </div>
-      <!-- 4 -->
-      <div class="benefit-item">
-        <div class="benefit-check">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-        </div>
-        <div>
-          <h3>Desenforme Perfeito</h3>
-          <p>A técnica para tirar do copo descartável sem trincar ou quebrar as bordas da sua vela.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     SEÇÃO DE PREÇO E CTA
-     ========================================================= -->
-<section class="section price-section">
-  <div class="container text-center">
-    <span class="section-label">Oferta especial</span>
-    <h2 class="section-title">Comece agora por um valor simbólico</h2>
-
-    <div class="price-card">
-      <p class="price-old">De R$ 97,00</p>
-      <p class="price-new">R$ 37<small style="font-size:.45em; vertical-align:super;">,00</small></p>
-      <span class="price-tag">Pagamento Único · Acesso Vitalício</span>
-
-      <!-- BOTÃO DIRETO ABAIXO DO PREÇO (SEMPRE VISÍVEL) -->
-      <div class="price-cta-container">
-        <a href="https://pay.cakto.com.br/tmruurb_1275646" target="_blank" class="btn-cta btn-cta-price" id="cta-price">
-          SIM! QUERO APRENDER A FAZER VELAS COMESTÍVEIS
-        </a>
-        <small class="cta-note" style="color:var(--texto-light); margin-top: 14px;">🔒 Ambiente 100% seguro · Aprovação instantânea · Acesso imediato</small>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     SEÇÃO 4 – GARANTIA & FAQ
-     ========================================================= -->
-<section class="section" style="background: var(--creme);">
-  <div class="container">
-    <!-- GUARANTEE -->
-    <div class="guarantee">
-      <div class="guarantee-badge">
-        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
-      </div>
-      <div>
-        <h3>7 Dias de Garantia Incondicional</h3>
-        <p>Seu investimento está protegido pelo Código de Defesa do Consumidor. Baixe o guia, leia as receitas e, se achar que não é para você, devolvemos 100% do seu dinheiro. Sem letras miúdas.</p>
-      </div>
-    </div>
-
-    <!-- FAQ -->
-    <div class="text-center" style="margin-bottom: 32px;">
-      <span class="section-label">Tire suas dúvidas</span>
-      <h2 class="section-title">Perguntas Frequentes</h2>
-    </div>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">É seguro comer?</button>
-        <div class="faq-a">
-          <p>Sim, 100% seguro. O guia ensina a utilizar pavios adequados (como pavio de algodão culinário) e ingredientes frescos. A chama apenas aquece a base de manteiga ou chocolate.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Precisa de equipamento caro?</button>
-        <div class="faq-a">
-          <p>Não. Você usará itens que já tem na cozinha e moldes descartáveis super baratos, como copos de isopor ou plástico maleável.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Quanto tempo a vela dura fora da geladeira?</button>
-        <div class="faq-a">
-          <p>No guia, ensinamos o ponto de temperagem correto para que a vela mantenha o formato perfeito à temperatura ambiente durante toda a ceia, derretendo apenas quando acesa.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Como recebo o guia?</button>
-        <div class="faq-a">
-          <p>Imediatamente após a aprovação do pagamento, você receberá o acesso pelo seu e-mail e WhatsApp, de forma totalmente automatizada.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- CTA final -->
-    <div class="text-center" style="margin-top: 48px;">
-      <a href="https://pay.cakto.com.br/tmruurb_1275646" target="_blank" class="btn-cta">
-        QUERO ACESSAR O GUIA AGORA POR APENAS R$&nbsp;37
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
-<footer>
-  <p>© 2026 Guia Prático de Velas Comestíveis Gourmet. Todos os direitos reservados.</p>
-  <p style="margin-top:8px;">
-    <a href="#">Política de Privacidade</a> &nbsp;·&nbsp; <a href="#">Termos de Uso</a>
-  </p>
-</footer>
-
-<!-- =========================================================
-     WHATSAPP FLOATING BUTTON
-     ========================================================= -->
-<a href="https://wa.me/5511914152947?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20Guia%20de%20Velas%20Comest%C3%ADveis." 
-   class="whatsapp-float" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   aria-label="Fale conosco no WhatsApp">
-  <svg viewBox="0 0 24 24">
-    <path d="M12.031 0C5.385 0 0 5.383 0 12.03c0 2.128.553 4.2 1.603 6.02L.21 23.46l5.572-1.462A11.96 11.96 0 0012.031 24c6.646 0 12.03-5.383 12.03-12.03S18.677 0 12.031 0zm5.952 17.106c-.244.685-1.417 1.282-1.946 1.343-.418.049-1.002.164-3.136-.722-2.585-1.074-4.225-3.69-4.354-3.864-.13-.173-1.04-1.385-1.04-2.643 0-1.258.654-1.878.887-2.124.232-.246.505-.308.673-.308.17 0 .338.003.486.01.161.008.377-.061.593.456.223.535.753 1.838.82 1.97.067.133.111.288.028.455-.083.167-.126.271-.253.421-.127.15-.265.33-.38.455-.126.136-.263.284-.112.545.152.261.674 1.114 1.442 1.8.991.884 1.83 1.155 2.097 1.285.267.13.423.111.583-.07.16-.183.69-1.32.906-1.748.215-.429.432-.34.674-.246.241.094 1.536.723 1.8.854.263.13.438.196.502.304.064.11.064.631-.18 1.316z"/>
-  </svg>
-</a>
-
-<!-- =========================================================
-     SCRIPTS
-     ========================================================= -->
-<script>
-  // ==============================================================
-  // 1. CONFIGURAÇÃO DO VÍDEO DO YOUTUBE
-  // ==============================================================
-  // Cole abaixo a URL ou ID do seu vídeo do YouTube:
-  const YOUTUBE_VIDEO_URL_OU_ID = 'FqZY6GlQDZw';
-
-  // API YouTube & Controle do som
-  let ytPlayer;
-  window.onYouTubeIframeAPIReady = function() {
-    try {
-      ytPlayer = new YT.Player('vsl-iframe', {
-        events: {
-          'onStateChange': function(e) {
-            // Se o usuário interagiu com o player e ativou o áudio
-            if (ytPlayer && typeof ytPlayer.isMuted === 'function' && !ytPlayer.isMuted()) {
-              const overlay = document.getElementById('vsl-unmute-overlay');
-              if (overlay) overlay.style.display = 'none';
-            }
-          }
-        }
-      });
-    } catch(err) {}
-  };
-
-  // Função disparada ao clicar no botão grande de ligar o som
-  function desmutarVideo() {
-    const iframe = document.getElementById('vsl-iframe');
-    const overlay = document.getElementById('vsl-unmute-overlay');
-
-    // 1. postMessage direto para o player do YouTube
-    if (iframe && iframe.contentWindow) {
-      try {
-        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute' }), '*');
-        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
-        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'seekTo', args: [0, true] }), '*');
-        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo' }), '*');
-      } catch(e) {}
-    }
-
-    // 2. YouTube Iframe API
-    if (ytPlayer && typeof ytPlayer.unMute === 'function') {
-      try {
-        ytPlayer.unMute();
-        ytPlayer.setVolume(100);
-        ytPlayer.seekTo(0);
-        ytPlayer.playVideo();
-      } catch(e) {}
-    }
-
-    // 3. Efeito de saída suave do botão
-    if (overlay) {
-      overlay.classList.add('fade-out');
-      setTimeout(() => {
-        overlay.style.display = 'none';
-      }, 400);
-    }
-  }
-
-  function aplicarVideoYouTube(input) {
-    const placeholder = document.getElementById('vsl-placeholder');
-    const iframe = document.getElementById('vsl-iframe');
-    if (!input || input === 'SEU_VIDEO_ID') {
-      if (placeholder) placeholder.style.display = 'flex';
-      if (iframe) iframe.style.display = 'none';
-      return;
-    }
-    const match = input.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))([\w-]{11})/);
-    const videoId = match ? match[1] : input.trim();
-    if (iframe && videoId && videoId.length === 11) {
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&playlist=${videoId}&enablejsapi=1`;
-      iframe.style.display = 'block';
-      if (placeholder) placeholder.style.display = 'none';
-    }
-  }
-  aplicarVideoYouTube(YOUTUBE_VIDEO_URL_OU_ID);
-
-  // ==============================================================
-  // 2. DELAY REMOVIDO - O botão agora aparece imediatamente
-  // ==============================================================
-
-  // ==============================================================
-  // 3. TRACKING NO PIXEL DA META (INITIATE CHECKOUT)
-  // ==============================================================
-  document.querySelectorAll('a[href*="cakto.com.br"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (typeof fbq === 'function') {
-        fbq('track', 'InitiateCheckout', {
-          content_name: 'Guia Prático de Velas Comestíveis Gourmet',
-          value: 37.00,
-          currency: 'BRL'
-        });
-      }
-    });
-  });
-
-  // ==============================================================
-  // 4. FAQ ACCORDION
-  // ==============================================================
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-      btn.setAttribute('aria-expanded', !isOpen);
-    });
-  });
-
-  // ==============================================================
-  // 5. SCROLL REVEAL (LEVE & SUAVE)
-  // ==============================================================
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('fade-up');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.card, .pillar, .benefit-item, .price-card, .guarantee').forEach(el => {
-    el.style.opacity = '0';
-    observer.observe(el);
-  });
-</script>
-<!-- SCRIPT PARA REPASSAR UTMS PARA O CHECKOUT -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // 1. Captura todos os parâmetros (UTMs) da URL atual
-    const urlParams = new URLSearchParams(window.location.search);
-    
-    // 2. Se existir algum parâmetro na URL...
-    if (urlParams.toString() !== "") {
-      // 3. Procura todos os links (botões) que vão para a Cakto
-      const linksCheckout = document.querySelectorAll('a[href*="pay.cakto.com.br"]');
+    <div class="grid" style="display: grid; gap: 24px; max-width: 900px; margin: 40px auto 0; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); text-align: left;">
       
-      linksCheckout.forEach(function(link) {
-        try {
-          let urlCheckout = new URL(link.href);
-          
-          // 4. Injeta os parâmetros da página direto no link do botão
-          for (const [key, value] of urlParams.entries()) {
-            if (!urlCheckout.searchParams.has(key)) {
-              urlCheckout.searchParams.append(key, value);
-            }
-          }
-          
-          // 5. Atualiza o botão silenciosamente
-          link.href = urlCheckout.toString();
-        } catch(e) {
-          console.error("Erro ao repassar UTMs:", e);
-        }
-      });
-    }
-  });
-</script>
-  
-</body>
-</html>
+      <!-- PLANO BÁSICO -->
+      <div class="price-card" style="padding: 32px 24px; position: relative; display: flex; flex-direction: column;">
+        <h3 style="font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--texto);">Plano Básico</h3>
+        <p class="price-new" style="font-size: 2.8rem; margin: 8px 0 16px;">R$ 19<small style="font-size:.45em; vertical-align:super;">,90</small></p>
+        
+        <ul style="list-style: none; padding: 0; margin-bottom: 32px; font-size: .92rem; color: var(--texto); line-height: 1.6; flex-grow: 1;">
+          <li style="display: flex; gap: 10px; margin-bottom: 12px;">✅ <span><strong>Guia Prático de Velas Comestíveis</strong></span></li>
+          <li style="display: flex; gap: 10px; margin-bottom: 12px;">✅ <span>As 30 Receitas (Doces e Salgadas)</span></li>
+          <li style="display: flex; gap: 10px; margin-bottom: 12px;">✅ <span>Lista de Insumos e Materiais Baratos</span></li>
+          <li style="display: flex; gap: 10px; margin-bottom: 12px; color: var(--texto-light); opacity: 0.5;">❌ <span>Planilha Automática de Precificação</span></li>
+          <li style="display: flex; gap: 10px; margin-
