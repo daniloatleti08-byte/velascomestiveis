@@ -1,3 +1,886 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Prático de Velas Comestíveis Gourmet – Aprenda & Lucre neste Natal</title>
+  <meta name="description" content="Aprenda a fazer velas comestíveis gourmet e transforme sua ceia de Natal ou crie um negócio lucrativo. Guia completo a partir de R$ 19,90.">
+
+  <!-- =========================================================
+       META PIXEL CODE (Facebook Ads)
+       Pixel ID Oficial Ativo: 1428548336100912
+       ========================================================= -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    const META_PIXEL_ID = '1428548336100912';
+    fbq('init', '1428548336100912');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1428548336100912&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- YouTube Iframe API para controle de áudio e unmute inteligente -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #3a1a1a;
+      background: #FBF6ED;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ===== PALETTE TOKENS ===== */
+    :root {
+      --creme:       #FBF6ED;
+      --creme-light: #FFF9F0;
+      --dourado:     #C9A84C;
+      --dourado-light: #E8D48B;
+      --dourado-dark: #A88832;
+      --vermelho:    #7A1B1B;
+      --vermelho-deep: #5C0E0E;
+      --verde:       #1B6B3A;
+      --verde-light: #2D9F56;
+      --texto:       #3a1a1a;
+      --texto-light: #6b5050;
+      --branco:      #FFFFFF;
+      --sombra:      0 4px 24px rgba(90, 20, 20, .08);
+      --sombra-hover:0 8px 40px rgba(90, 20, 20, .14);
+      --radius:      16px;
+      --radius-sm:   10px;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--vermelho); }
+    h1 { font-weight: 800; }
+    h2 { font-weight: 700; }
+    h3 { font-weight: 600; }
+
+    /* ===== UTILITY ===== */
+    .container { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    .section   { padding: 72px 0; }
+    .text-center { text-align: center; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,.55); }
+      50%      { box-shadow: 0 0 0 14px rgba(201,168,76,0); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      animation: fade-up .7s ease-out both;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px 48px;
+      background:
+        radial-gradient(ellipse at 30% 0%, rgba(201,168,76,.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 100%, rgba(122,27,27,.10) 0%, transparent 55%),
+        linear-gradient(175deg, #FFF9F0 0%, #FBF6ED 50%, #F5ECD8 100%);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5l5 10h11l-9 7 4 11-11-7-11 7 4-11-9-7h11z' fill='%23C9A84C' opacity='.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 780px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(201,168,76,.15);
+      border: 1px solid rgba(201,168,76,.35);
+      color: var(--dourado-dark);
+      font-size: .78rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(1.65rem, 5vw, 2.8rem);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--dourado); }
+    .hero-sub {
+      font-size: clamp(.95rem, 2.5vw, 1.15rem);
+      color: var(--texto-light);
+      max-width: 640px;
+      margin: 0 auto 36px;
+    }
+
+    /* ===== VIDEO (vertical 9:16 – YouTube) ===== */
+    .vsl-wrapper {
+      position: relative;
+      width: 100%; max-width: 380px;
+      margin: 0 auto 36px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(90,20,20,.15);
+      border: 2px solid rgba(201,168,76,.30);
+    }
+    .vsl-ratio {
+      position: relative;
+      padding-bottom: 177.78%; /* 9:16 vertical */
+      background: #1a0a0a;
+    }
+    .vsl-ratio iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .vsl-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: radial-gradient(circle at 50% 35%, rgba(122,27,27,.88) 0%, rgba(20,5,5,.96) 100%);
+      color: var(--branco);
+      text-align: center;
+      padding: 30px 24px;
+      z-index: 2;
+    }
+    .vsl-play-btn {
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-dark) 100%);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 0 32px rgba(201,168,76,.6);
+      animation: pulse-glow 2s infinite;
+      transition: transform .2s ease;
+    }
+    .vsl-play-btn svg { margin-left: 4px; }
+    .vsl-placeholder:hover .vsl-play-btn { transform: scale(1.08); }
+    .vsl-placeholder-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--dourado-light);
+      margin-bottom: 8px;
+    }
+    .vsl-placeholder-sub {
+      font-size: .82rem;
+      color: rgba(255,255,255,.75);
+      max-width: 280px;
+      line-height: 1.5;
+    }
+
+    /* ===== BOTÃO GRANDE PARA LIGAR O SOM (SMART UNMUTE OVERLAY) ===== */
+    .vsl-unmute-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 8;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 16px;
+      padding-top: 28%;
+      background: radial-gradient(circle at center, rgba(30,10,10,0.35) 0%, rgba(10,3,3,0.7) 100%);
+      cursor: pointer;
+      transition: opacity .4s ease, visibility .4s ease;
+    }
+    .vsl-unmute-overlay.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .vsl-unmute-btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(135deg, #FFF9F0 0%, #E8D48B 30%, #C9A84C 70%, #A88832 100%);
+      color: #3A1010;
+      border: 3px solid #FFFFFF;
+      padding: 18px 22px;
+      border-radius: 100px;
+      box-shadow: 0 0 35px rgba(201,168,76,.85), 0 10px 32px rgba(0,0,0,.6);
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+      animation: unmute-pulse 1.8s infinite ease-in-out;
+      transition: transform .25s ease, box-shadow .25s ease;
+      width: 100%;
+      max-width: 330px;
+    }
+    .vsl-unmute-btn:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 50px rgba(201,168,76,1), 0 14px 40px rgba(0,0,0,.75);
+    }
+    .vsl-unmute-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-deep) 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(122,27,27,.4);
+      animation: icon-sound-wave 1.2s infinite ease-in-out;
+    }
+    .vsl-unmute-content {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .vsl-unmute-alert {
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      color: #7A1B1B;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .vsl-unmute-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: .01em;
+      color: #2D0808;
+      text-transform: uppercase;
+    }
+    .vsl-unmute-sub {
+      font-size: .72rem;
+      font-weight: 600;
+      color: #5C2E0E;
+      margin-top: 3px;
+    }
+    @keyframes unmute-pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 28px rgba(201,168,76,.75), 0 8px 24px rgba(0,0,0,.5);
+      }
+      50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 48px rgba(201,168,76,1), 0 12px 36px rgba(0,0,0,.7);
+      }
+    }
+    @keyframes icon-sound-wave {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.12) rotate(-5deg); }
+    }
+
+    /* ===== CTA BUTTON ===== */
+    .btn-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-dark) 100%);
+      color: var(--branco);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: clamp(.9rem, 2.5vw, 1.05rem);
+      padding: 16px 36px;
+      border: none; border-radius: 100px;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: transform .2s, box-shadow .3s;
+      animation: pulse-glow 2s infinite;
+    }
+    .btn-cta:hover {
+      transform: scale(1.04);
+      box-shadow: var(--sombra-hover);
+    }
+    .btn-cta-secondary {
+      background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-deep) 100%);
+      animation: pulse-glow 2.5s infinite;
+    }
+    .btn-cta-secondary:hover { box-shadow: 0 8px 36px rgba(122,27,27,.3); }
+
+    /* CTA SEM DELAY (Aparece imediatamente) */
+    .cta-delayed {
+      display: block; 
+      opacity: 1;     
+      transform: translateY(0); 
+    }
+
+    .cta-note {
+      display: block;
+      margin-top: 12px;
+      font-size: .78rem;
+      color: var(--texto-light);
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--vermelho);
+      padding: 16px 20px;
+      text-align: center;
+      color: rgba(255,255,255,.85);
+      font-size: .82rem;
+      letter-spacing: .02em;
+      display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: center; align-items: center;
+    }
+    .trust-bar span { display: inline-flex; align-items: center; gap: 6px; }
+    .trust-bar svg { width: 16px; height: 16px; fill: var(--dourado-light); flex-shrink: 0; }
+
+    /* ===== SECTION TITLES ===== */
+    .section-label {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--dourado-dark);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      color: var(--texto-light);
+      max-width: 620px;
+      margin: 0 auto 40px;
+      font-size: clamp(.92rem, 2.2vw, 1.05rem);
+    }
+
+    /* ===== CARDS GRID ===== */
+    .cards { display: grid; gap: 28px; }
+    @media (min-width: 640px) { .cards--2 { grid-template-columns: 1fr 1fr; } }
+
+    .card {
+      background: var(--branco);
+      border-radius: var(--radius);
+      box-shadow: var(--sombra);
+      border: 1px solid rgba(201,168,76,.18);
+      transition: transform .3s, box-shadow .3s;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-hover);
+    }
+    .card-media {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      background: #2a1010;
+    }
+    @media (min-width: 768px) {
+      .card-media { height: 270px; }
+    }
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      transition: transform .4s ease;
+      display: block;
+    }
+    .card:hover .card-img {
+      transform: scale(1.05);
+    }
+    .card-pill {
+      position: absolute;
+      bottom: 14px;
+      left: 16px;
+      background: rgba(122,27,27,.92);
+      backdrop-filter: blur(8px);
+      color: var(--branco);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(201,168,76,.4);
+      box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    }
+    .card-pill--green {
+      background: rgba(27,107,58,.92);
+      border-color: rgba(255,255,255,.3);
+    }
+    .card-body {
+      padding: 28px 24px 32px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+      line-height: 1.3;
+      color: var(--vermelho);
+    }
+    .card p {
+      color: var(--texto-light);
+      font-size: .95rem;
+      line-height: 1.7;
+    }
+
+    /* ===== NEW PRICE SECTION (PLANS) ===== */
+    .price-section {
+      background: var(--creme-light);
+    }
+    .price-card {
+      background: var(--branco);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px rgba(90,20,20,.05);
+      border: 1px solid rgba(201,168,76,.15);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .price-card--featured {
+      border: 3px solid var(--dourado);
+      box-shadow: 0 12px 48px rgba(201,168,76,.25);
+      transform: scale(1.02);
+      z-index: 2;
+    }
+    .price-card--featured:hover {
+      transform: scale(1.04);
+      box-shadow: 0 16px 56px rgba(201,168,76,.35);
+    }
+    .price-new {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      color: var(--vermelho);
+      line-height: 1.1;
+    }
+
+    /* ===== GUARANTEE ===== */
+    .guarantee {
+      display: flex; gap: 20px; align-items: center;
+      background: var(--branco);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--sombra);
+      border-left: 4px solid var(--verde);
+      max-width: 680px;
+      margin: 0 auto 48px;
+      text-align: left;
+    }
+    .guarantee-badge {
+      flex-shrink: 0;
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--verde) 0%, var(--verde-light) 100%);
+      display: flex; align-items: center; justify-content: center;
+      animation: float 3s ease-in-out infinite;
+    }
+    .guarantee-badge svg { width: 32px; height: 32px; fill: #fff; }
+    .guarantee h3 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700; font-size: 1.05rem;
+      color: var(--verde);
+      margin-bottom: 6px;
+    }
+    .guarantee p { font-size: .88rem; color: var(--texto-light); }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 680px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid rgba(201,168,76,.2);
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      width: 100%;
+      background: none; border: none;
+      padding: 20px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem; font-weight: 600;
+      color: var(--vermelho);
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      text-align: left;
+    }
+    .faq-q::after {
+      content: '+';
+      font-size: 1.4rem; font-weight: 300;
+      color: var(--dourado);
+      transition: transform .3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease, padding .3s;
+      color: var(--texto-light);
+      font-size: .92rem;
+    }
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--vermelho-deep);
+      color: rgba(255,255,255,.65);
+      text-align: center;
+      padding: 32px 20px;
+      font-size: .78rem;
+    }
+    footer a { color: rgba(255,255,255,.8); text-decoration: underline; }
+    footer a:hover { color: var(--dourado-light); }
+
+    /* ===== VALUE PILLARS ===== */
+    .pillars-section {
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(201,168,76,.10) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(122,27,27,.06) 0%, transparent 50%),
+        linear-gradient(180deg, var(--creme) 0%, #F5ECD8 100%);
+      position: relative;
+    }
+    .pillars-grid {
+      display: grid;
+      gap: 24px;
+    }
+    @media (min-width: 768px) { .pillars-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+    .pillar {
+      background: var(--branco);
+      border-radius: var(--radius);
+      padding: 36px 24px 32px;
+      box-shadow: var(--sombra);
+      border-top: 4px solid var(--dourado);
+      text-align: center;
+      transition: transform .3s, box-shadow .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dourado), var(--dourado-light), var(--dourado));
+      background-size: 200% 100%;
+      animation: shimmer 3s linear infinite;
+    }
+    .pillar:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-hover);
+    }
+    .pillar-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-dark) 100%);
+      color: var(--branco);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(201,168,76,.35);
+    }
+    .pillar-number--icon {
+      font-size: 1.6rem;
+      background: linear-gradient(135deg, var(--verde) 0%, var(--verde-light) 100%);
+      box-shadow: 0 4px 20px rgba(27,107,58,.3);
+    }
+    .pillar-number--red {
+      background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-deep) 100%);
+      box-shadow: 0 4px 20px rgba(122,27,27,.3);
+    }
+    .pillar h3 {
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .pillar p {
+      color: var(--texto-light);
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+    .pillar-highlight {
+      display: inline-block;
+      background: rgba(201,168,76,.12);
+      color: var(--dourado-dark);
+      font-weight: 700;
+      font-size: .75rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-top: 16px;
+    }
+    .pillar-highlight--green {
+      background: rgba(27,107,58,.10);
+      color: var(--verde);
+    }
+    .pillar-highlight--red {
+      background: rgba(122,27,27,.10);
+      color: var(--vermelho);
+    }
+
+    /* ===== RESPONSIVE HELPERS ===== */
+    @media (max-width: 640px) {
+      .guarantee { flex-direction: column; text-align: center; }
+      .hero { padding-top: 48px; }
+      .price-card--featured { transform: scale(1); } /* Remove scale on mobile for better fit */
+    }
+
+    /* ===== WHATSAPP FLOATING BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #25D366;
+      color: white;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 9999; /* Fica acima de tudo na página */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: float-wa 3s ease-in-out infinite;
+    }
+    .whatsapp-float svg {
+      width: 38px;
+      height: 38px;
+      fill: currentColor;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+    @keyframes float-wa {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    /* Balão de Texto (Tooltip) que aparece ao passar o mouse */
+    .whatsapp-float::before {
+      content: 'Dúvidas?';
+      position: absolute;
+      right: 76px;
+      background: #FFFFFF;
+      color: #333333;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateX(10px);
+      white-space: nowrap;
+    }
+    .whatsapp-float:hover::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- =========================================================
+     HERO SECTION
+     ========================================================= -->
+<section class="hero">
+  <div class="hero-inner fade-up">
+    <div class="hero-badge">
+      <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor"><path d="M10 1l2.39 4.84L18 6.77l-4 3.9.94 5.5L10 13.57l-4.94 2.6.94-5.5-4-3.9 5.61-.93z"/></svg>
+      Edição Especial de Natal 2026
+    </div>
+
+    <h1>
+      Aprenda a fazer <span>Velas Comestíveis Gourmet</span>: Transforme ingredientes simples em uma experiência inesquecível para a sua ceia ou crie um negócio altamente lucrativo.
+    </h1>
+
+    <p class="hero-sub">
+      Descubra o método simples para criar velas de manteiga de ervas e chocolate usando formas caseiras. O segredo mais bem guardado dos jantares de luxo, agora na sua cozinha.
+    </p>
+
+    <!-- VSL – YouTube Vertical (9:16) – Smart Autoplay mudo -->
+    <div class="vsl-wrapper">
+      <div class="vsl-ratio">
+        <iframe
+          id="vsl-iframe"
+          src="https://www.youtube.com/embed/FqZY6GlQDZw?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&playlist=FqZY6GlQDZw&enablejsapi=1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          title="Velas Comestíveis Gourmet – Vídeo Oficial"
+        ></iframe>
+
+        <!-- BOTÃO GRANDE DE ATIVAR O SOM (SMART AUTOPLAY UNMUTE) -->
+        <div class="vsl-unmute-overlay" id="vsl-unmute-overlay" onclick="desmutarVideo()">
+          <button class="vsl-unmute-btn" id="vsl-unmute-btn" type="button" aria-label="Ligar o som do vídeo">
+            <span class="vsl-unmute-icon">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+              </svg>
+            </span>
+            <span class="vsl-unmute-content">
+              <span class="vsl-unmute-alert">🔊 SEU VÍDEO JÁ COMEÇOU</span>
+              <span class="vsl-unmute-title">CLIQUE PARA LIGAR O SOM</span>
+              <span class="vsl-unmute-sub">Toque aqui para ouvir a apresentação</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA ABAIXO DO VÍDEO – APARECE IMEDIATAMENTE -->
+    <div class="cta-delayed" id="cta-hero-wrapper">
+      <a href="#planos" class="btn-cta" id="cta-hero">
+        VER OPÇÕES DE PLANOS A PARTIR DE R$ 19,90
+      </a>
+      <small class="cta-note">🔒 Pagamento seguro · Acesso imediato</small>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span>
+    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+    Compra 100% Segura
+  </span>
+  <span>
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+    Garantia de 7 Dias
+  </span>
+  <span>
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10z"/></svg>
+    Acesso por E-mail e WhatsApp
+  </span>
+</div>
+
+<!-- =========================================================
+     SEÇÃO 2 – PARA QUEM É ESTE GUIA?
+     ========================================================= -->
+<section class="section" style="background: var(--creme-light);">
+  <div class="container text-center">
+    <span class="section-label">Dois caminhos, um único guia</span>
+    <h2 class="section-title">Para quem é este Guia?</h2>
+    <p class="section-desc">Não importa se o seu objetivo é surpreender a família ou faturar alto no fim de ano — este guia foi feito para você.</p>
+
+    <div class="cards cards--2">
+      <!-- CARD 1: Impressionar na Ceia -->
+      <div class="card">
+        <div class="card-media">
+          <img
+            src="images/ceia-impressionar.jpg"
+            alt="Vela comestível de manteiga de ervas derretida na Ceia de Natal com pão artesanal"
+            class="card-img"
+            loading="lazy"
+          >
+          <span class="card-pill">Uso Pessoal · Família & Ceia</span>
+        </div>
+        <div class="card-body">
+          <h3>Para Impressionar na sua Ceia</h3>
+          <p>
+            Esqueça a decoração tradicional. Imagine a cena: você acende as velas da mesa e, minutos depois, seus convidados mergulham torradas e frios na "cera" derretida — um creme quente e perfeito de manteiga, alho assado e sal rosa. Você vai criar memórias (e fotos) que sua família jamais esquecerá.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 2: Renda Extra Lucrativa -->
+      <div class="card">
+        <div class="card-media">
+          <img
+            src="images/renda-extra.jpg"
+            alt="Produção e encomendas de velas comestíveis embaladas para presente de Natal"
+            class="card-img"
+            loading="lazy"
+          >
+          <span class="card-pill card-pill--green">Negócio Lucrativo · Margem de 400%</span>
+        </div>
+        <div class="card-body">
+          <h3>Para Criar uma Renda Extra Lucrativa</h3>
+          <p>
+            Fuja da guerra de preços dos panetones tradicionais. As velas comestíveis possuem um altíssimo valor percebido e zero concorrência. Você utiliza insumos baratos e moldes ultra econômicos (copos descartáveis). Custos baixos, produção rápida e margem de lucro que pode ultrapassar os <strong>400%</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SEÇÃO – 3 PILARES DE VALOR
+     ========================================================= -->
+<section class="section pillars-section">
+  <div class="container text-center">
+    <span class="section-label">O que torna este guia único</span>
+    <h2 class="section-title">Três Pilares que Garantem o seu Resultado</h2>
+    <p class="section-desc">
+      Este não é mais um e-book genérico. Cada detalhe foi pensado para que você execute com confiança — sem adivinhar nada, sem gastar além do necessário.
+    </p>
+
+    <div class="pillars-grid">
+
+      <!-- PILAR 1 – 30 Receitas -->
+      <div class="pillar">
+        <div class="pillar-number">30</div>
+        <h3>Receitas Exclusivas de Velas Comestíveis</h3>
+        <p>
+          São <strong>30 receitas testadas e detalhadas</strong>, mesclando opções <strong>doces</strong> (chocolate belga, doce de leite, Nutella) e <strong>salgadas</strong> (manteiga de ervas, queijos, alho assado).
+        </p>
+        <span class="pillar-highlight">Doces + Salgadas</span>
+      </div>
+
+      <!-- PILAR 2 – Lista de Insumos -->
+      <div class="pillar">
+        <div class="pillar-number pillar-number--icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM7 17h5v-1H7v1zm0-2h10v-1H7v1zm0-2h10v-1H7v1z"/></svg>
+        </div>
+        <h3>Lista Exata de Insumos — Sem Adivinhação</h3>
+        <p>
+          O guia detalha <strong>exatamente quais ingredientes</strong> usar, as marcas com melhor custo-benefício e as proporções certas para garantir a textura ideal que não derrete antes da hora.
+        </p>
+        <span class="pillar-highlight pillar-highlight--green">Zero Desperdício</span>
+      </div>
+
+      <!-- PILAR 3 – Baixo Custo -->
+      <div class="pillar">
+        <div class="pillar-number pillar-number--red">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1H6.5c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.88-4.4z"/></svg>
+        </div>
+        <h3>Desenhado para Gastar Pouco</h3>
+        <p>
+          Você aprende a usar <strong>moldes improvisados</strong> (copos descartáveis) e insumos acessíveis. A vela sai por menos de R$&nbsp;5 para fazer. Para vender, a margem passa dos 400%.
+        </p>
+        <span class="pillar-highlight pillar-highlight--red">Alta Margem</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- =========================================================
      NOVA SEÇÃO DE PREÇO: PLANO BÁSICO vs PLANO COMPLETO
      ========================================================= -->
@@ -73,3 +956,220 @@
     <p style="margin-top: 32px; font-size: 0.9rem; font-weight: 600; color: var(--verde);">🔒 Ambiente 100% seguro · Garantia incondicional de 7 dias.</p>
   </div>
 </section>
+
+<!-- =========================================================
+     SEÇÃO 4 – GARANTIA & FAQ
+     ========================================================= -->
+<section class="section" style="background: var(--creme);">
+  <div class="container">
+    <!-- GUARANTEE -->
+    <div class="guarantee">
+      <div class="guarantee-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
+      </div>
+      <div>
+        <h3>7 Dias de Garantia Incondicional</h3>
+        <p>Seu investimento está protegido pelo Código de Defesa do Consumidor. Baixe o guia, leia as receitas e, se achar que não é para você, devolvemos 100% do seu dinheiro. Sem letras miúdas.</p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="text-center" style="margin-bottom: 32px;">
+      <span class="section-label">Tire suas dúvidas</span>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">É seguro comer?</button>
+        <div class="faq-a">
+          <p>Sim, 100% seguro. O guia ensina a utilizar pavios adequados (como pavio de algodão culinário) e ingredientes frescos. A chama apenas aquece a base de manteiga ou chocolate.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Precisa de equipamento caro?</button>
+        <div class="faq-a">
+          <p>Não. Você usará itens que já tem na cozinha e moldes descartáveis super baratos, como copos de isopor ou plástico maleável.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Quanto tempo a vela dura fora da geladeira?</button>
+        <div class="faq-a">
+          <p>No guia, ensinamos o ponto de temperagem correto para que a vela mantenha o formato perfeito à temperatura ambiente durante toda a ceia, derretendo apenas quando acesa.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Como recebo o guia?</button>
+        <div class="faq-a">
+          <p>Imediatamente após a aprovação do pagamento, você receberá o acesso pelo seu e-mail e WhatsApp, de forma totalmente automatizada.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer>
+  <p>© 2026 Guia Prático de Velas Comestíveis Gourmet. Todos os direitos reservados.</p>
+  <p style="margin-top:8px;">
+    <a href="#">Política de Privacidade</a> &nbsp;·&nbsp; <a href="#">Termos de Uso</a>
+  </p>
+</footer>
+
+<!-- =========================================================
+     WHATSAPP FLOATING BUTTON
+     ========================================================= -->
+<a href="https://wa.me/5511914152947?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20Guia%20de%20Velas%20Comest%C3%ADveis." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 24 24">
+    <path d="M12.031 0C5.385 0 0 5.383 0 12.03c0 2.128.553 4.2 1.603 6.02L.21 23.46l5.572-1.462A11.96 11.96 0 0012.031 24c6.646 0 12.03-5.383 12.03-12.03S18.677 0 12.031 0zm5.952 17.106c-.244.685-1.417 1.282-1.946 1.343-.418.049-1.002.164-3.136-.722-2.585-1.074-4.225-3.69-4.354-3.864-.13-.173-1.04-1.385-1.04-2.643 0-1.258.654-1.878.887-2.124.232-.246.505-.308.673-.308.17 0 .338.003.486.01.161.008.377-.061.593.456.223.535.753 1.838.82 1.97.067.133.111.288.028.455-.083.167-.126.271-.253.421-.127.15-.265.33-.38.455-.126.136-.263.284-.112.545.152.261.674 1.114 1.442 1.8.991.884 1.83 1.155 2.097 1.285.267.13.423.111.583-.07.16-.183.69-1.32.906-1.748.215-.429.432-.34.674-.246.241.094 1.536.723 1.8.854.263.13.438.196.502.304.064.11.064.631-.18 1.316z"/>
+  </svg>
+</a>
+
+<!-- =========================================================
+     SCRIPTS
+     ========================================================= -->
+<script>
+  // ==============================================================
+  // 1. CONFIGURAÇÃO DO VÍDEO DO YOUTUBE
+  // ==============================================================
+  const YOUTUBE_VIDEO_URL_OU_ID = 'FqZY6GlQDZw';
+
+  let ytPlayer;
+  window.onYouTubeIframeAPIReady = function() {
+    try {
+      ytPlayer = new YT.Player('vsl-iframe', {
+        events: {
+          'onStateChange': function(e) {
+            if (ytPlayer && typeof ytPlayer.isMuted === 'function' && !ytPlayer.isMuted()) {
+              const overlay = document.getElementById('vsl-unmute-overlay');
+              if (overlay) overlay.style.display = 'none';
+            }
+          }
+        }
+      });
+    } catch(err) {}
+  };
+
+  function desmutarVideo() {
+    const iframe = document.getElementById('vsl-iframe');
+    const overlay = document.getElementById('vsl-unmute-overlay');
+
+    if (iframe && iframe.contentWindow) {
+      try {
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute' }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'seekTo', args: [0, true] }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo' }), '*');
+      } catch(e) {}
+    }
+
+    if (ytPlayer && typeof ytPlayer.unMute === 'function') {
+      try {
+        ytPlayer.unMute();
+        ytPlayer.setVolume(100);
+        ytPlayer.seekTo(0);
+        ytPlayer.playVideo();
+      } catch(e) {}
+    }
+
+    if (overlay) {
+      overlay.classList.add('fade-out');
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 400);
+    }
+  }
+
+  function aplicarVideoYouTube(input) {
+    const placeholder = document.getElementById('vsl-placeholder');
+    const iframe = document.getElementById('vsl-iframe');
+    if (!input || input === 'SEU_VIDEO_ID') {
+      if (placeholder) placeholder.style.display = 'flex';
+      if (iframe) iframe.style.display = 'none';
+      return;
+    }
+    const match = input.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))([\w-]{11})/);
+    const videoId = match ? match[1] : input.trim();
+    if (iframe && videoId && videoId.length === 11) {
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&playlist=${videoId}&enablejsapi=1`;
+      iframe.style.display = 'block';
+      if (placeholder) placeholder.style.display = 'none';
+    }
+  }
+  aplicarVideoYouTube(YOUTUBE_VIDEO_URL_OU_ID);
+
+  // ==============================================================
+  // 3. TRACKING NO PIXEL DA META (INITIATE CHECKOUT)
+  // ==============================================================
+  document.querySelectorAll('a[href*="cakto.com.br"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', {
+          content_name: 'Guia Prático de Velas Comestíveis Gourmet',
+          value: 37.00,
+          currency: 'BRL'
+        });
+      }
+    });
+  });
+
+  // ==============================================================
+  // 4. FAQ ACCORDION
+  // ==============================================================
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // ==============================================================
+  // 5. SCROLL REVEAL (LEVE & SUAVE)
+  // ==============================================================
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('fade-up');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.card, .pillar, .benefit-item, .price-card, .guarantee').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+</script>
+
+<!-- SCRIPT PARA REPASSAR UTMS PARA O CHECKOUT -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.toString() !== "") {
+      const linksCheckout = document.querySelectorAll('a[href*="pay.cakto.com.br"]');
+      linksCheckout.forEach(function(link) {
+        try {
+          let urlCheckout = new URL(link.href);
+          for (const [key, value] of urlParams.entries()) {
+            if (!urlCheckout.searchParams.has(key)) {
+              urlCheckout.searchParams.append(key, value);
+            }
+          }
+          link.href = urlCheckout.toString();
+        } catch(e) {}
+      });
+    }
+  });
+</script>
+  
+</body>
+</html>
