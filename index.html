@@ -9,6 +9,8 @@
   <!-- =========================================================
        META PIXEL CODE (Facebook Ads)
        Pixel ID Oficial Ativo: 1428548336100912
+       Rastreamento limpo: PageView + ViewContent na página.
+       InitiateCheckout oficial dispara apenas dentro da Cakto.
        ========================================================= -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -162,7 +164,7 @@
     .vsl-wrapper {
       position: relative;
       width: 100%;
-      max-width: 310px; /* Compactado no mobile para o botão aparecer sem rolar demais */
+      max-width: 310px;
       margin: 0 auto 20px;
       border-radius: var(--radius);
       overflow: hidden;
@@ -193,7 +195,6 @@
       justify-content: center;
       padding: 14px;
       padding-top: 22%;
-      /* Fundo mais leve para deixar o vídeo visível em movimento */
       background: radial-gradient(circle at center, rgba(20,6,6,0.18) 0%, rgba(10,3,3,0.48) 100%);
       cursor: pointer;
       transition: opacity .35s ease, visibility .35s ease;
@@ -261,7 +262,7 @@
       50%      { transform: scale(1.03); }
     }
 
-    /* ===== FAIXA DE PROVA RÁPIDA ACIMA DA DOBRA (NOVO) ===== */
+    /* ===== FAIXA DE PROVA RÁPIDA ACIMA DA DOBRA ===== */
     .hero-proof-strip {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -749,7 +750,7 @@
     </div>
 
     <h1>
-      Faça <span>Velas Comestíveis Gourmet</span> com custo de R$&nbsp;4,50 e surpreenda na Ceia ou lucre até 400% neste Natal
+      Faça <span>Velas Comestíveis Gourmet</span> com custo de R$&nbsp;4,50 e surpreenda na Ceia ou lucre até 400% este Natal
     </h1>
 
     <p class="hero-sub">
@@ -1057,7 +1058,7 @@
     </div>
 
     <div class="text-center" style="margin-top: 40px;">
-      <a href="https://pay.cakto.com.br/tmruurb_1275646" target="_blank" class="btn-cta">
+      <a href="https://pay.cakto.com.br/tmruurb_1275646" target="_blank" class="btn-cta" id="cta-footer">
         QUERO ACESSAR O GUIA AGORA POR R$&nbsp;37
         <span class="btn-cta-sub">Acesso imediato · 7 dias de garantia</span>
       </a>
@@ -1083,7 +1084,7 @@
     <span class="sticky-price-label">Guia 30 Receitas</span>
     <span class="sticky-price-val">R$ 37,00</span>
   </div>
-  <a href="https://pay.cakto.com.br/tmruurb_1275646" target="_blank" class="sticky-btn">
+  <a href="https://pay.cakto.com.br/tmruurb_1275646" target="_blank" class="sticky-btn" id="cta-sticky">
     ACESSAR AGORA →
   </a>
 </div>
@@ -1149,12 +1150,13 @@
     }
   }
 
-  // Tracking InitiateCheckout nos botões Cakto
+  // Tracking de clique no botão (sem duplicar o InitiateCheckout oficial da Cakto)
   document.querySelectorAll('a[href*="cakto.com.br"]').forEach(btn => {
     btn.addEventListener('click', () => {
       if (typeof fbq === 'function') {
-        fbq('track', 'InitiateCheckout', {
+        fbq('trackCustom', 'CliqueCheckout', {
           content_name: 'Guia Prático de Velas Comestíveis Gourmet',
+          button_id: btn.id || 'cta-geral',
           value: 37.00,
           currency: 'BRL'
         });
